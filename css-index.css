@@ -1,0 +1,63 @@
+body{
+    overflow: hidden;
+}
+
+body{ 
+    background: url("./Cv_Galaxy/map/galaxy.jpg") fixed no-repeat top left ;
+    background-color: blueviolet;
+    background-size: cover;
+
+
+}
+
+
+
+.intro-planet{
+    position: absolute;
+    height: 600px;
+    top: 40%;
+    left: 2%;
+}
+
+.mando-planet{
+    position: absolute;
+    height: 500px;
+    top: 10%;
+    left: 30%     
+}
+
+.mononoke-planet{
+    position: absolute;
+    height: 600px;
+    top: 10%;
+    left: 50%;
+}
+
+.porco-planet{
+    position: absolute;
+    height: 500px;
+    top: 15%;
+    left: 75%;
+}
+
+.catsby-planet{
+    position: absolute;
+    height: 600px;
+    top: 70%;
+    left: 20%
+}
+
+.simpson-planet{
+    position: absolute;
+    height: 500px;
+    top: 75%;
+    left: 45%;
+}
+
+.ange-planet{
+    position: absolute;
+    height: 600px;
+    top: 60%;
+    left: 70%;
+}
+
