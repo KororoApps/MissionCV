@@ -1,63 +1,75 @@
 body{
     overflow: hidden;
-}
-
-body{ 
     background: url("./Cv_Galaxy/map/galaxy.jpg") fixed no-repeat top left ;
     background-color: blueviolet;
     background-size: cover;
-
-
 }
 
+#galaxy{
+    user-select: none;
+}
 
-
-.intro-planet{
+#intro-planet{
     position: absolute;
-    height: 600px;
+    height: 20%;
     top: 40%;
     left: 2%;
+    
 }
 
-.mando-planet{
+#mando-planet{
     position: absolute;
-    height: 500px;
-    top: 10%;
+    height: 20%;
+    top: 15%;
     left: 30%     
 }
 
-.mononoke-planet{
+#mononoke-planet{
     position: absolute;
-    height: 600px;
+    height: 25%;
     top: 10%;
     left: 50%;
 }
 
-.porco-planet{
+#porco-planet{
     position: absolute;
-    height: 500px;
+    height: 20%;
     top: 15%;
     left: 75%;
 }
 
-.catsby-planet{
+#catsby-planet{
     position: absolute;
-    height: 600px;
+    height: 25%;
     top: 70%;
     left: 20%
 }
 
-.simpson-planet{
+#simpson-planet{
     position: absolute;
-    height: 500px;
+    height: 20%;
     top: 75%;
     left: 45%;
 }
 
-.ange-planet{
+#ange-planet{
     position: absolute;
-    height: 600px;
+    height: 25%;
     top: 60%;
     left: 70%;
 }
+
+#world-bar{
+    position: absolute;
+    background-color: aliceblue;
+    width: 40%;
+    height: 100%;
+    right : -100%;
+    transition: 0.5s ease-out;
+}
+
+#world-bar.active{
+    right: 0;
+}
+
 
