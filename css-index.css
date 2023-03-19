@@ -5,71 +5,87 @@ body{
     background-size: cover;
 }
 
+
 #galaxy{
+    height: 100vh;
+    width: 100vw;
+    position: relative;    
+    transition: 0.5s ease-out;
+}
+
+#galaxy.active{
+    transform: translate(var(--translate-x),var(--translate-y) );
+} 
+
+
+.planet{
     user-select: none;
+    position: absolute;
+    transition: 0.5s ease-out;
+}
+
+.planet.active{
+    transform: scale(2);
 }
 
 #intro-planet{
-    position: absolute;
-    height: 20%;
+    height: 22%;
     top: 40%;
-    left: 2%;
-    
+    left: 2%;    
 }
 
+
 #mando-planet{
-    position: absolute;
     height: 20%;
     top: 15%;
     left: 30%     
 }
 
 #mononoke-planet{
-    position: absolute;
     height: 25%;
     top: 10%;
     left: 50%;
 }
 
 #porco-planet{
-    position: absolute;
     height: 20%;
     top: 15%;
     left: 75%;
 }
 
 #catsby-planet{
-    position: absolute;
     height: 25%;
     top: 70%;
     left: 20%
 }
 
 #simpson-planet{
-    position: absolute;
     height: 20%;
     top: 75%;
     left: 45%;
 }
 
 #ange-planet{
-    position: absolute;
     height: 25%;
     top: 60%;
     left: 70%;
 }
 
+
+
 #world-bar{
     position: absolute;
     background-color: aliceblue;
-    width: 40%;
-    height: 100%;
+    width: 700px;
+    height: 150%;
     right : -100%;
+    top : 0;
     transition: 0.5s ease-out;
 }
 
 #world-bar.active{
-    right: 0;
+    right: 0px;
 }
+
 
 
