@@ -20,58 +20,55 @@ body{
 
 .planet{
     user-select: none;
-    position: absolute;
-    transition: 0.5s ease-out;
+    transition: 0.5s ease-out  ;
+    display: block;
 }
 
-.planet.active{
+.containerPlanet{
+    position: absolute;
+}
+
+.containerPlanet:hover::after{
+    content: ""; 
+    position: absolute;
+    top:0;
+    display: block;
+    width: var(--target-width);
+    height: var(--target-height);
+    background: url("./Cv_Galaxy/target/target_02.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(var(--target-translate-x), var(--target-translate-y));
+    
+
+}  
+
+.containerPlanet:not(.active):hover::after{
+    animation: targetblink 0.7s infinite;
+} 
+
+@keyframes targetblink {
+    0% {}
+    100% {background-image: url("./Cv_Galaxy/target/target_01.png");}
+    
+}
+
+
+.containerPlanet.active{    
+    transition: 0.5s ease-in-out;
     transform: scale(2);
 }
 
-#intro-planet{
-    height: 22%;
-    top: 40%;
-    left: 2%;    
+.containerPlanet.active::after{    
+    content: ""; 
+    position: absolute;
+    top : 0;
+    width: var(--target-width);
+    height: var(--target-height);
+    background-image: url("./Cv_Galaxy/target/target_03.png");
+    background-size: contain;
+    transform: translate(var(--target-translate-x), var(--target-translate-y));
 }
-
-
-#mando-planet{
-    height: 20%;
-    top: 15%;
-    left: 30%     
-}
-
-#mononoke-planet{
-    height: 25%;
-    top: 10%;
-    left: 50%;
-}
-
-#porco-planet{
-    height: 20%;
-    top: 15%;
-    left: 75%;
-}
-
-#catsby-planet{
-    height: 25%;
-    top: 70%;
-    left: 20%
-}
-
-#simpson-planet{
-    height: 20%;
-    top: 75%;
-    left: 45%;
-}
-
-#ange-planet{
-    height: 25%;
-    top: 60%;
-    left: 70%;
-}
-
-
 
 #world-bar{
     position: absolute;
