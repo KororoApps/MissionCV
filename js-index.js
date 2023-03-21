@@ -1,7 +1,11 @@
 const ELEMENTS = [
   {
     id: "intro-planet",
-    planetSrc: ["./Cv_Galaxy/map/intro_planet.png"],
+    planetSrc: "./Cv_Galaxy/map/intro_planet.png",
+    backgroundSrc: "./Cv_Galaxy/story/story_fond.jpg",
+    story1Src: "./Cv_Galaxy/story/story_01.png",
+    story2Src: "./Cv_Galaxy/story/story_02.png",
+    parchmentSrc: "./Cv_Galaxy/story/story_03.png",
     planetAlt: "Planète Terre",
     height: "22vh",
     top: "40%",
@@ -109,6 +113,66 @@ const ELEMENTS = [
   },
 ];
 
+const modal = document.querySelector(".modal");
+
+//OUVERTURE INTRO DU CV
+window.addEventListener("load", () => {
+  modal.showModal();
+});
+
+const buttonNext = document.querySelector(".button-next");
+const modalClose = document.querySelector(".modal-close");
+const storyOne = document.getElementById("story-one");
+const storyTwo = document.getElementById("story-two");
+const storyThree = document.getElementById("story-three");
+
+let clickCounter = 0;
+//FAIRE DEFILER L'HISTOIRE
+buttonNext.addEventListener("click", () => {
+  console.log("youpi");
+
+  if (clickCounter == 0) {
+    storyOne.style.visibility = "hidden";
+    storyTwo.style.visibility = "visible";
+    clickCounter++;
+  } else if (clickCounter == 1) {
+    storyTwo.style.visibility = "hidden";
+    storyThree.style.visibility = "visible";
+    buttonNext.style.display = "none";
+    modalClose.style.visibility = "visible";
+  }
+});
+
+// const storyContainer = document.createElement("div");
+// modal.appendChild(storyContainer);
+// storyContainer.classList.add("story-container");
+// const storyBackground = document.createElement("img");
+// storyContainer.appendChild(storyBackground);
+// storyBackground.classList.add("story");
+// storyBackground.src = ELEMENTS[0].backgroundSrc;
+// storyBackground.id = "story-background";
+// const storyOne = document.createElement("img");
+// storyContainer.appendChild(storyOne);
+// storyOne.classList.add("story");
+// storyOne.src = ELEMENTS[0].story1Src;
+// storyOne.id = "story-one";
+// const storyTwo = document.createElement("img");
+// storyContainer.appendChild(storyTwo);
+// storyTwo.classList.add("story");
+// storyTwo.src = ELEMENTS[0].story2Src;
+// storyTwo.id = "story-two";
+// const storyThree = document.createElement("img");
+// storyContainer.appendChild(storyThree);
+// storyThree.classList.add("story");
+// storyThree.src = ELEMENTS[0].parchmentSrc;
+// storyThree.id = "story-three";
+
+//FERMETURE INTRO DU CV
+
+modalClose.addEventListener("click", () => {
+  modal.close();
+});
+
 const galaxy = document.getElementById("galaxy");
 const worldBar = document.getElementById("world-bar");
 let translateGalaxyX;
@@ -143,35 +207,55 @@ ELEMENTS.forEach((element) => {
   //AU CLIC SUR LA PLANETE...
   containerPlanet.addEventListener("click", () => {
     //DEPLOYER LA WORLDBAR
-    worldBar.classList.toggle("active");
-
-    //CREER DANS LA WORLDBAR LA BALISE POUR LE BACKGROUND ET LA BALISE POUR LE CV
-    const backgroundWorld = document.createElement("img");
-    const parchmentWorld = document.createElement("img");
-    worldBar.appendChild(backgroundWorld);
-    worldBar.appendChild(parchmentWorld);
-
-    //IMAGE DE FOND DE LA PLANETE
-    backgroundWorld.src = element.backgroundSrc;
-    console.log(backgroundWorld);
-
-    //IMAGE DU CV
-    parchmentWorld.src = element.parchmentSrc;
-
+    const active = worldBar.classList.toggle("active");
     //GROSSIR LA DIV DE LA PLANETE
     containerPlanet.classList.toggle("active");
-
-    //CENTRER LA DIV DE LA PLANETE SUR L'ECRAN RESTANT
-    const centerX = (window.innerWidth - worldBar.offsetWidth) / 2;
-    const centerY = window.innerHeight / 2;
-
-    translateGalaxyX =
-      centerX - (containerPlanet.offsetLeft + containerPlanet.offsetWidth / 2);
-    translateGalaxyY =
-      centerY - (containerPlanet.offsetTop + containerPlanet.offsetHeight / 2);
-
+    //TRANSLATE GALAXY
     galaxy.classList.toggle("active");
-    galaxy.style.setProperty("--translate-x", translateGalaxyX + "px");
-    galaxy.style.setProperty("--translate-y", translateGalaxyY + "px");
+
+    //CREER DANS LA WORLDBAR LA BALISE POUR LE BACKGROUND ET LA BALISE POUR LE CV
+
+    if (active) {
+      const containerImages = document.createElement("div");
+      worldBar.appendChild(containerImages);
+      containerImages.classList.add("container-images");
+      const backgroundWorld = document.createElement("img");
+      const parchmentWorld = document.createElement("img");
+
+      containerImages.appendChild(backgroundWorld);
+      containerImages.appendChild(parchmentWorld);
+
+      //IMAGE DE FOND DE LA PLANETE
+      backgroundWorld.classList.add("background");
+      backgroundWorld.src = element.backgroundSrc;
+      console.log(backgroundWorld);
+
+      //IMAGE DU CV
+      parchmentWorld.classList.add("parchment");
+      parchmentWorld.src = element.parchmentSrc;
+
+      //CENTRER LA DIV DE LA PLANETE SUR L'ECRAN RESTANT
+      const centerX = (window.innerWidth - worldBar.offsetWidth) / 2;
+      const centerY = window.innerHeight / 2;
+
+      translateGalaxyX =
+        centerX -
+        (containerPlanet.offsetLeft + containerPlanet.offsetWidth / 2);
+      translateGalaxyY =
+        centerY -
+        (containerPlanet.offsetTop + containerPlanet.offsetHeight / 2);
+
+      galaxy.style.setProperty("--translate-x", translateGalaxyX + "px");
+      galaxy.style.setProperty("--translate-y", translateGalaxyY + "px");
+
+      //SINON, SUPPRESSION DE LA DIV ET DES IMAGES DE WORLDBAR
+    } else {
+      const images = worldBar.querySelectorAll("img");
+      images.forEach((image) => {
+        image.remove();
+      });
+      const containerImage = worldBar.querySelector("div");
+      containerImage.remove();
+    }
   });
 });
