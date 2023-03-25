@@ -125,21 +125,33 @@ const modalClose = document.querySelector(".modal-close");
 const storyOne = document.getElementById("story-one");
 const storyTwo = document.getElementById("story-two");
 const storyThree = document.getElementById("story-three");
+const storyFour = document.getElementById("story-four");
+const speakStoryOne = document.getElementById("speak-story-one");
+const speakStoryTwo = document.getElementById("speak-story-two");
+const speakStoryThree = document.getElementById("speak-story-three");
 
 let clickCounter = 0;
 //FAIRE DEFILER L'HISTOIRE
 buttonNext.addEventListener("click", () => {
-  console.log("youpi");
-
   if (clickCounter == 0) {
-    storyOne.style.visibility = "hidden";
-    storyTwo.style.visibility = "visible";
+    storyOne.style.display = "none";
+    speakStoryOne.style.display = "none";
+    storyTwo.style.display = "initial";
+    speakStoryTwo.style.display = "initial";
     clickCounter++;
   } else if (clickCounter == 1) {
-    storyTwo.style.visibility = "hidden";
-    storyThree.style.visibility = "visible";
+    storyTwo.style.display = "none";
+    speakStoryTwo.style.display = "none";
+    storyThree.style.display = "initial";
+    setTimeout(() => {
+      storyFour.style.display = "initial";
+    }, 3000);
+    speakStoryThree.style.display = "initial";
     buttonNext.style.display = "none";
-    modalClose.style.visibility = "visible";
+    modalClose.style.display = "initial";
+    storyFour.addEventListener("click", () => {
+      worldBar.classList.toggle("active");
+    });
   }
 });
 
@@ -219,11 +231,15 @@ ELEMENTS.forEach((element) => {
       const containerImages = document.createElement("div");
       worldBar.appendChild(containerImages);
       containerImages.classList.add("container-images");
+      const containerBackground = document.createElement("div");
+      containerImages.appendChild(containerBackground);
+      containerBackground.classList.add("container-background");
+
       const backgroundWorld = document.createElement("img");
       const parchmentWorld = document.createElement("img");
 
-      containerImages.appendChild(backgroundWorld);
-      containerImages.appendChild(parchmentWorld);
+      containerBackground.appendChild(backgroundWorld);
+      containerBackground.appendChild(parchmentWorld);
 
       //IMAGE DE FOND DE LA PLANETE
       backgroundWorld.classList.add("background");
