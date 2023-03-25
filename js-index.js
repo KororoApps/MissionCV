@@ -14,6 +14,15 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-16%",
     translateTargetY: "-15%",
+    rightPosition: "10%",
+    topPosition: "50%",
+    pieceOfCV: `<h1>ELODIE SPONTON</h1> 
+    <h4>DEVELOPPEUSE WEB</h4>
+    <h3>COORDONNEES</h3>
+    <p>Tél : 06 42 96 52 26</p>
+    <p>Mail : elodie.sponton@yahoo.fr</p>
+    <p>Adresse : 4H allée de la 1er Division Fr Libre</p>
+    <p>21000 DIJON</p>`,
   },
   {
     id: "mando-planet",
@@ -30,6 +39,17 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-20%",
     translateTargetY: "-20%",
+    rightPosition: "0%",
+    topPosition: "5%",
+    pieceOfCV: `<h2>FORMATIONS AUTODIDACTES</h2> 
+    <h3>Apprentissage de l'algorithmique et Java</h3>
+    <p>Etude avec le livre "Algorithmique - Des bases à la POO en Java"</p>
+    <h3>Apprentissage de Javascript</h3>
+    <p>Etude avec la formation en ligne Javascript de A à Z, de Fromscratch.podia.com</p>
+    <h3>Apprentissage de Symfony</h3>
+    <p>Etude avec la formation en ligne We Develop Me, de Lior Chamla</p>
+    <h3>Apprentissage de HTML, CSS, PHP, SQL, GIT</h3>
+    <p>Etude avec OpenClassRooms</p>`,
   },
   {
     id: "mononoke-planet",
@@ -46,6 +66,15 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-10%",
     translateTargetY: "-15%",
+    rightPosition: "50%",
+    topPosition: "50%",
+    pieceOfCV: `<h2>FORMATIONS</h2> 
+    <h3>Titre de niveau II, Responsable QSE</h3>
+    <h4>2014-2016 / CESI Entreprise, Dijon</h4>
+    <h3>Master 2, Management des Risques Industriels et Environnementaux</h3>
+    <h4>2012-2013 / Université de Poitiers</h4>
+    <h3>Master 2, Espace Rural et Environnement</h3>
+    <h4>2011-2012 / Université de Bourgogne</h4>`,
   },
   {
     id: "porco-planet",
@@ -62,6 +91,18 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-24%",
     translateTargetY: "-20%",
+    rightPosition: "50%",
+    topPosition: "50%",
+    pieceOfCV: `<h2>EXPERIENCES PROFESSIONNELLES</h2> 
+    <h3>Assistante admnistrative - Sanitel</h3>
+    <h4>Octobre 2017 - En cours</h4>
+    <p>Accueil physique et téléphonique, Établissement de DC4 et contrat de sous-traitance, Vérification des factures...</p>
+    <h3>Assistane administrative - Loiseau Volets Roulants</h3>
+    <h4>Février - Octobre 2017</h4>
+    <p>Prise et suivie de commandes, Suivide de la trésorerie, Accueil physique et téléphonique.</p>
+    <h3>Ingénieure QSE - Schneider Electric</h3>
+    <h4>Septembre 2014 - Mars 2016</h4>
+    <p>Unification du système de management de deux usines.</p>`,
   },
   {
     id: "catsby-planet",
@@ -78,6 +119,13 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-13%",
     translateTargetY: "-10%",
+    rightPosition: "50%",
+    topPosition: "40%",
+    pieceOfCV: `<h2>INTÉRÊTS ET LOISIRS</h2> 
+    <h4>Dessin et création</h4>
+    <p>Animation d'un blog Wordpress et d'un compte Instagram.</p>
+    <p>Création de vidéos Tiktok.</p>
+    <p>Participation à l'Inktober depuis 2016.</p>`,
   },
   {
     id: "simpson-planet",
@@ -94,6 +142,12 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-23%",
     translateTargetY: "-20%",
+    rightPosition: "50%",
+    topPosition: "20%",
+    pieceOfCV: `<h2>PROJETS PERSONNELS</h2> 
+    <h3>- Création d'un jeu de tir pour m'exercer à Javascript</h3>
+    <p>https://kororoapps.github.io/ShootTeemo/</p>
+    <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>`,
   },
   {
     id: "ange-planet",
@@ -110,6 +164,13 @@ const ELEMENTS = [
     targetHeight: "33vh",
     translateTargetX: "-15%",
     translateTargetY: "-10%",
+    rightPosition: "50%",
+    topPosition: "20%",
+    pieceOfCV: `<h2>PROFIL PERSONNEL</h2> 
+    <p>Autonome</p>
+    <p>Créative</p>
+    <p>Persévérante</p>
+    <p>Je suis confiante dans ma capacité à progresser</p>`,
   },
 ];
 
@@ -130,22 +191,57 @@ const speakStoryOne = document.getElementById("speak-story-one");
 const speakStoryTwo = document.getElementById("speak-story-two");
 const speakStoryThree = document.getElementById("speak-story-three");
 
+const speaks = document.querySelectorAll(".speak");
+const txt1 = `Haaaaa ! Mon CV ! <br> Noooon, revenez !!`;
+const txt2 = `Les chats de l'espace ont encore sévi ! <br>
+Ils volent les CV afin que les humains ne trouvent pas de travail et passent leur temps chez eux avec leur chat !`;
+const txt3 = `Est-ce que voulez bien m'aidez à retrouver mon CV ? <br>
+Je crois qu'ils l'ont dispersé dans le multivers. <br> J'ai seulement pu retrouver ce morceau...`;
+
+function writer(word) {
+  speaks.forEach((speak) => {
+    speak.innerHTML = "";
+    function typewriter(word, index) {
+      if (index < word.length) {
+        setTimeout(() => {
+          if (word.slice(index).startsWith("<br>")) {
+            speak.innerHTML += `<br>`;
+            index += 4;
+          } else {
+            speak.innerHTML += `${word[index]}`;
+          }
+
+          typewriter(word, index + 1);
+        }, 30);
+      }
+    }
+    setTimeout(() => {
+      typewriter(word, 0);
+    }, 400);
+  });
+}
+
+writer(txt1);
+
 let clickCounter = 0;
 //FAIRE DEFILER L'HISTOIRE
+
 buttonNext.addEventListener("click", () => {
   if (clickCounter == 0) {
     storyOne.style.display = "none";
     speakStoryOne.style.display = "none";
+    writer(txt2);
     storyTwo.style.display = "initial";
     speakStoryTwo.style.display = "initial";
     clickCounter++;
   } else if (clickCounter == 1) {
     storyTwo.style.display = "none";
     speakStoryTwo.style.display = "none";
+    writer(txt3);
     storyThree.style.display = "initial";
     setTimeout(() => {
       storyFour.style.display = "initial";
-    }, 3000);
+    }, 5000);
     speakStoryThree.style.display = "initial";
     buttonNext.style.display = "none";
     modalClose.style.display = "initial";
@@ -154,30 +250,6 @@ buttonNext.addEventListener("click", () => {
     });
   }
 });
-
-// const storyContainer = document.createElement("div");
-// modal.appendChild(storyContainer);
-// storyContainer.classList.add("story-container");
-// const storyBackground = document.createElement("img");
-// storyContainer.appendChild(storyBackground);
-// storyBackground.classList.add("story");
-// storyBackground.src = ELEMENTS[0].backgroundSrc;
-// storyBackground.id = "story-background";
-// const storyOne = document.createElement("img");
-// storyContainer.appendChild(storyOne);
-// storyOne.classList.add("story");
-// storyOne.src = ELEMENTS[0].story1Src;
-// storyOne.id = "story-one";
-// const storyTwo = document.createElement("img");
-// storyContainer.appendChild(storyTwo);
-// storyTwo.classList.add("story");
-// storyTwo.src = ELEMENTS[0].story2Src;
-// storyTwo.id = "story-two";
-// const storyThree = document.createElement("img");
-// storyContainer.appendChild(storyThree);
-// storyThree.classList.add("story");
-// storyThree.src = ELEMENTS[0].parchmentSrc;
-// storyThree.id = "story-three";
 
 //FERMETURE INTRO DU CV
 
@@ -243,12 +315,21 @@ ELEMENTS.forEach((element) => {
 
       //IMAGE DE FOND DE LA PLANETE
       backgroundWorld.classList.add("background");
+      backgroundWorld.style.setProperty(
+        "--right-position",
+        element.rightPosition
+      );
+      backgroundWorld.style.setProperty("--top-position", element.topPosition);
       backgroundWorld.src = element.backgroundSrc;
-      console.log(backgroundWorld);
 
       //IMAGE DU CV
       parchmentWorld.classList.add("parchment");
       parchmentWorld.src = element.parchmentSrc;
+      parchmentWorld.style.setProperty(
+        "--right-position",
+        element.rightPosition
+      );
+      parchmentWorld.style.setProperty("--top-position", element.topPosition);
 
       //CENTRER LA DIV DE LA PLANETE SUR L'ECRAN RESTANT
       const centerX = (window.innerWidth - worldBar.offsetWidth) / 2;
@@ -263,6 +344,21 @@ ELEMENTS.forEach((element) => {
 
       galaxy.style.setProperty("--translate-x", translateGalaxyX + "px");
       galaxy.style.setProperty("--translate-y", translateGalaxyY + "px");
+
+      let clickCounterPieceCV = 0;
+      parchmentWorld.addEventListener("click", () => {
+        if (clickCounterPieceCV % 2 == 0) {
+          const pieceOfCV = document.createElement("div");
+          containerImages.appendChild(pieceOfCV);
+          pieceOfCV.classList.add("piece-of-cv");
+          pieceOfCV.innerHTML = element.pieceOfCV;
+          clickCounterPieceCV++;
+        } else {
+          const pieceOfCV = document.querySelector(".piece-of-cv");
+          pieceOfCV.remove();
+          clickCounterPieceCV++;
+        }
+      });
 
       //SINON, SUPPRESSION DE LA DIV ET DES IMAGES DE WORLDBAR
     } else {
