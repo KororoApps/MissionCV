@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   background: url("./Cv_Galaxy/map/galaxy.jpg") fixed no-repeat top left;
   background-color: blueviolet;
   background-size: cover;
@@ -286,6 +287,9 @@ body {
 }
 
 @media (orientation: landscape) and (max-device-width: 800px) {
+  body {
+    overflow: visible;
+  }
   .speak {
     margin: 0;
     font-size: 0.7em;
