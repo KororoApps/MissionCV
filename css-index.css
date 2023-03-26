@@ -1,8 +1,8 @@
 body {
-  overflow: hidden;
   background: url("./Cv_Galaxy/map/galaxy.jpg") fixed no-repeat top left;
   background-color: blueviolet;
   background-size: cover;
+  margin: 0;
 }
 
 #galaxy {
@@ -75,17 +75,19 @@ body {
 }
 
 #world-bar {
-  position: absolute;
+  position: fixed;
   background-color: aliceblue;
   width: 36vw;
   height: 100vh;
-  right: -100%;
+  right: 0;
   top: 0;
   transition: 0.5s ease-out;
+  overflow-y: scroll;
+  transform: translateX(100%);
 }
 
 #world-bar.active {
-  right: 0px;
+  transform: initial;
 }
 
 .container-images {
@@ -156,8 +158,9 @@ body {
   display: none;
 }
 
-.storyContainer {
+.story-container {
   position: relative;
+  left: 0;
 }
 
 .story {
@@ -280,4 +283,56 @@ body {
 .download-cv {
   right: 70%;
   bottom: 3%;
+}
+
+@media (orientation: landscape) and (max-device-width: 800px) {
+  .speak {
+    margin: 0;
+    font-size: 0.7em;
+    width: 160px;
+    padding: 2px;
+    border-width: 2px;
+    top: 75%;
+    left: 23%;
+  }
+
+  .button-next {
+    font-size: 1em;
+  }
+
+  #speak-story-two {
+    top: 55%;
+  }
+
+  #speak-story-three {
+    top: 55%;
+  }
+
+  .click {
+    display: none;
+  }
+
+  .first-piece {
+    top: 10%;
+    left: 22%;
+    font-size: 0.7em;
+  }
+
+  .button-retrieve {
+    font-size: 0.6em;
+    bottom: 85%;
+    right: 75%;
+  }
+  .download-cv {
+    font-size: 0.6em;
+    bottom: 2%;
+    right: 70%;
+    padding: 2px;
+  }
+
+  .txt-cv-complete {
+    top: 10%;
+    left: 2%;
+    font-size: 0.6em;
+  }
 }

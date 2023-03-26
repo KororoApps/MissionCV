@@ -28,7 +28,7 @@ const ELEMENTS = [
   {
     id: "mando-planet",
     planetSrc: "./Cv_Galaxy/map/mando_planet.png",
-    backgroundSrc: "./Cv_Galaxy/background_worlds/mando.png",
+    backgroundSrc: "./Cv_Galaxy/background_worlds/mando.jpg",
     parchmentSrc: "./Cv_Galaxy/background_worlds/mando_cv.png",
     planetAlt: "Planète Mandalorian",
     backgroundAlt: "Mando et Grogu",
@@ -56,7 +56,7 @@ const ELEMENTS = [
   {
     id: "mononoke-planet",
     planetSrc: "./Cv_Galaxy/map/mononoke_planet.png",
-    backgroundSrc: "./Cv_Galaxy/background_worlds/mononoke.png",
+    backgroundSrc: "./Cv_Galaxy/background_worlds/mononoke.jpg",
     parchmentSrc: "./Cv_Galaxy/background_worlds/mononoke_cv.png",
     planetAlt: "Planète Princesse Mononoké",
     backgroundAlt: "Dans la forêt",
@@ -82,7 +82,7 @@ const ELEMENTS = [
   {
     id: "porco-planet",
     planetSrc: "./Cv_Galaxy/map/porco_planet.png",
-    backgroundSrc: "./Cv_Galaxy/background_worlds/porco.png",
+    backgroundSrc: "./Cv_Galaxy/background_worlds/porco.jpg",
     parchmentSrc: "./Cv_Galaxy/background_worlds/porco_cv.png",
     planetAlt: "Planète Porco Rosso",
     backgroundAlt: "Luffy aviatrice",
@@ -111,7 +111,7 @@ const ELEMENTS = [
   {
     id: "catsby-planet",
     planetSrc: "./Cv_Galaxy/map/catsby_planet.png",
-    backgroundSrc: "./Cv_Galaxy/background_worlds/catsby.png",
+    backgroundSrc: "./Cv_Galaxy/background_worlds/catsby.jpg",
     parchmentSrc: "./Cv_Galaxy/background_worlds/catsby_cv.png",
     planetAlt: "Planète Catsby",
     backgroundAlt: "Chat Catsby",
@@ -135,7 +135,7 @@ const ELEMENTS = [
   {
     id: "simpson-planet",
     planetSrc: "./Cv_Galaxy/map/simpson_planet.png",
-    backgroundSrc: "./Cv_Galaxy/background_worlds/simpson.png",
+    backgroundSrc: "./Cv_Galaxy/background_worlds/simpson.jpg",
     parchmentSrc: "./Cv_Galaxy/background_worlds/simpson_cv.png",
     planetAlt: "Planète Simpson",
     backgroundAlt: "Petit papa Noël devant la télé",
@@ -158,7 +158,7 @@ const ELEMENTS = [
   {
     id: "ange-planet",
     planetSrc: "./Cv_Galaxy/map/ange_planet.png",
-    backgroundSrc: "./Cv_Galaxy/background_worlds/ange.png",
+    backgroundSrc: "./Cv_Galaxy/background_worlds/ange.jpg",
     parchmentSrc: "./Cv_Galaxy/background_worlds/ange_cv.png",
     planetAlt: "Planète tableau",
     backgroundAlt: "Un ange",
@@ -353,6 +353,7 @@ ELEMENTS.forEach((element) => {
       //CENTRER LA DIV DE LA PLANETE SUR L'ECRAN RESTANT
       const centerX = (window.innerWidth - worldBar.offsetWidth) / 2;
       const centerY = window.innerHeight / 2;
+      console.log(centerY);
 
       translateGalaxyX =
         centerX -
@@ -425,6 +426,10 @@ ELEMENTS.forEach((element) => {
                 downloadCvComplete.href = "./Cv_Galaxy/cvComplete.pdf";
                 downloadCvComplete.download = "CV-Elodie SPONTON.pdf";
                 downloadCvComplete.addEventListener("click", () => {
+                  cvComplete.close();
+                  txtCvComplete.remove();
+                });
+                galaxy.addEventListener("click", () => {
                   cvComplete.close();
                   txtCvComplete.remove();
                 });
