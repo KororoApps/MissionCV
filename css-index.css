@@ -126,7 +126,9 @@ body {
 }
 
 .modal-close,
-.button-next {
+.button-next,
+.button-retrieve,
+.download-cv {
   position: absolute;
   z-index: 1;
   color: white;
@@ -144,7 +146,9 @@ body {
 }
 
 .modal-close:hover,
-.button-next:hover {
+.button-next:hover,
+.button-retrieve:hover,
+.download-cv:hover {
   filter: brightness(1.2);
 }
 
@@ -222,10 +226,58 @@ body {
   display: none;
   top: 65%;
 }
+.button-retrieve {
+  position: absolute;
+  padding: 5px;
+}
 
 .piece-of-cv {
   position: relative;
   height: 50vh;
   margin-top: 3%;
+  padding: 10px 15px;
   background-color: aliceblue;
+}
+
+.piece-of-cv h1 {
+  color: blueviolet;
+}
+
+.first-piece {
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 35%;
+  color: rgb(74, 12, 85);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.cv-complete {
+  overflow: hidden;
+  padding: 0;
+}
+
+.cv-complete::backdrop {
+  background-color: rgba(74, 12, 85, 0.438);
+}
+
+.img-cv-complete {
+  height: 95vh;
+}
+
+.txt-cv-complete {
+  position: absolute;
+  color: rgb(250, 241, 252);
+  top: 30%;
+  left: 5%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.download-cv {
+  right: 70%;
+  bottom: 3%;
 }

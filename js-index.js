@@ -23,6 +23,7 @@ const ELEMENTS = [
     <p>Mail : elodie.sponton@yahoo.fr</p>
     <p>Adresse : 4H allée de la 1er Division Fr Libre</p>
     <p>21000 DIJON</p>`,
+    cvRetrieve: true,
   },
   {
     id: "mando-planet",
@@ -50,6 +51,7 @@ const ELEMENTS = [
     <p>Etude avec la formation en ligne We Develop Me, de Lior Chamla</p>
     <h3>Apprentissage de HTML, CSS, PHP, SQL, GIT</h3>
     <p>Etude avec OpenClassRooms</p>`,
+    cvRetrieve: false,
   },
   {
     id: "mononoke-planet",
@@ -75,6 +77,7 @@ const ELEMENTS = [
     <h4>2012-2013 / Université de Poitiers</h4>
     <h3>Master 2, Espace Rural et Environnement</h3>
     <h4>2011-2012 / Université de Bourgogne</h4>`,
+    cvRetrieve: false,
   },
   {
     id: "porco-planet",
@@ -103,6 +106,7 @@ const ELEMENTS = [
     <h3>Ingénieure QSE - Schneider Electric</h3>
     <h4>Septembre 2014 - Mars 2016</h4>
     <p>Unification du système de management de deux usines.</p>`,
+    cvRetrieve: false,
   },
   {
     id: "catsby-planet",
@@ -126,6 +130,7 @@ const ELEMENTS = [
     <p>Animation d'un blog Wordpress et d'un compte Instagram.</p>
     <p>Création de vidéos Tiktok.</p>
     <p>Participation à l'Inktober depuis 2016.</p>`,
+    cvRetrieve: false,
   },
   {
     id: "simpson-planet",
@@ -148,6 +153,7 @@ const ELEMENTS = [
     <h3>- Création d'un jeu de tir pour m'exercer à Javascript</h3>
     <p>https://kororoapps.github.io/ShootTeemo/</p>
     <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>`,
+    cvRetrieve: false,
   },
   {
     id: "ange-planet",
@@ -171,6 +177,7 @@ const ELEMENTS = [
     <p>Créative</p>
     <p>Persévérante</p>
     <p>Je suis confiante dans ma capacité à progresser</p>`,
+    cvRetrieve: false,
   },
 ];
 
@@ -198,12 +205,14 @@ Ils volent les CV afin que les humains ne trouvent pas de travail et passent leu
 const txt3 = `Est-ce que voulez bien m'aidez à retrouver mon CV ? <br>
 Je crois qu'ils l'ont dispersé dans le multivers. <br> J'ai seulement pu retrouver ce morceau...`;
 
+let timeoutWriter;
+
 function writer(word) {
   speaks.forEach((speak) => {
     speak.innerHTML = "";
     function typewriter(word, index) {
       if (index < word.length) {
-        setTimeout(() => {
+        timeoutWriter = setTimeout(() => {
           if (word.slice(index).startsWith("<br>")) {
             speak.innerHTML += `<br>`;
             index += 4;
@@ -213,11 +222,13 @@ function writer(word) {
 
           typewriter(word, index + 1);
         }, 30);
+      } else {
+        speak.innerHTML = `${word}`;
       }
     }
     setTimeout(() => {
       typewriter(word, 0);
-    }, 400);
+    }, 500);
   });
 }
 
@@ -230,6 +241,7 @@ buttonNext.addEventListener("click", () => {
   if (clickCounter == 0) {
     storyOne.style.display = "none";
     speakStoryOne.style.display = "none";
+    clearTimeout(timeoutWriter);
     writer(txt2);
     storyTwo.style.display = "initial";
     speakStoryTwo.style.display = "initial";
@@ -237,6 +249,7 @@ buttonNext.addEventListener("click", () => {
   } else if (clickCounter == 1) {
     storyTwo.style.display = "none";
     speakStoryTwo.style.display = "none";
+    clearTimeout(timeoutWriter);
     writer(txt3);
     storyThree.style.display = "initial";
     setTimeout(() => {
@@ -246,7 +259,13 @@ buttonNext.addEventListener("click", () => {
     buttonNext.style.display = "none";
     modalClose.style.display = "initial";
     storyFour.addEventListener("click", () => {
-      worldBar.classList.toggle("active");
+      const clickImage = document.querySelector(".click");
+      clickImage.remove();
+      const firstPiece = document.createElement("div");
+      storyFour.appendChild(firstPiece);
+      firstPiece.classList.add("first-piece");
+      firstPiece.innerHTML = `Bravo ! Vous avez récupéré un premier morceau ! <br> 
+      Allez sur la planète Terre pour le voir de plus près !`;
     });
   }
 });
@@ -346,13 +365,72 @@ ELEMENTS.forEach((element) => {
       galaxy.style.setProperty("--translate-y", translateGalaxyY + "px");
 
       let clickCounterPieceCV = 0;
+      const pieceOfCV = document.createElement("div");
+      const buttonRetrieve = document.createElement("button");
+
+      if (element.cvRetrieve) {
+        containerImages.appendChild(pieceOfCV);
+        pieceOfCV.classList.add("piece-of-cv");
+        pieceOfCV.innerHTML = element.pieceOfCV;
+        pieceOfCV.appendChild(buttonRetrieve);
+        buttonRetrieve.classList.add("button-retrieve");
+        buttonRetrieve.innerHTML = "Récupéré !";
+        buttonRetrieve.style.backgroundColor = "green";
+      }
+
       parchmentWorld.addEventListener("click", () => {
         if (clickCounterPieceCV % 2 == 0) {
-          const pieceOfCV = document.createElement("div");
           containerImages.appendChild(pieceOfCV);
           pieceOfCV.classList.add("piece-of-cv");
           pieceOfCV.innerHTML = element.pieceOfCV;
           clickCounterPieceCV++;
+
+          pieceOfCV.appendChild(buttonRetrieve);
+          buttonRetrieve.classList.add("button-retrieve");
+          if (element.cvRetrieve) {
+            buttonRetrieve.innerHTML = "Récupéré !";
+            buttonRetrieve.style.backgroundColor = "green";
+          } else {
+            buttonRetrieve.innerHTML = "Récupérer";
+            buttonRetrieve.addEventListener("click", () => {
+              element.cvRetrieve = true;
+              //CHGT BOUTTON QUAND CV RECUPERE
+              buttonRetrieve.innerHTML = "Récupéré !";
+              buttonRetrieve.style.backgroundColor = "green";
+
+              //VERIFIER SI TOUS LES CV SONT RECUPERES
+              console.log(ELEMENTS);
+              if (ELEMENTS.every((element) => element.cvRetrieve)) {
+                worldBar.classList.toggle("active");
+                containerPlanet.classList.toggle("active");
+                //TRANSLATE GALAXY
+                galaxy.classList.toggle("active");
+                const txtCvComplete = document.createElement("div");
+                galaxy.appendChild(txtCvComplete);
+                txtCvComplete.classList.add("txt-cv-complete");
+                txtCvComplete.innerHTML = `Merci ! Vous avez retrouver mon CV au complet ! <br> 
+                Vous pouvez me contacter pour me le rendre <br> si vous le souhaitez :)`;
+                const cvComplete = document.createElement("dialog");
+                galaxy.appendChild(cvComplete);
+                cvComplete.classList.add("cv-complete");
+                cvComplete.showModal();
+                const imgCvComplete = document.createElement("img");
+                cvComplete.appendChild(imgCvComplete);
+                imgCvComplete.classList.add("img-cv-complete");
+                imgCvComplete.src = "./Cv_Galaxy/cvComplete.jpg";
+                const downloadCvComplete = document.createElement("a");
+                cvComplete.appendChild(downloadCvComplete);
+                downloadCvComplete.classList.add("download-cv");
+                downloadCvComplete.innerHTML = "Télécharger";
+                downloadCvComplete.href = "./Cv_Galaxy/cvComplete.pdf";
+                downloadCvComplete.download = "CV-Elodie SPONTON.pdf";
+                downloadCvComplete.addEventListener("click", () => {
+                  cvComplete.close();
+                  txtCvComplete.remove();
+                });
+              }
+            });
+          }
         } else {
           const pieceOfCV = document.querySelector(".piece-of-cv");
           pieceOfCV.remove();
