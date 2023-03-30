@@ -260,7 +260,8 @@ buttonNext.addEventListener("click", () => {
     modalClose.style.display = "initial";
     storyFour.addEventListener("click", () => {
       const clickImage = document.querySelector(".click");
-      clickImage.remove();
+      clickImage.style.visibility = "hidden";
+      storyFour.style.animationPlayState = "paused";
       const firstPiece = document.createElement("div");
       storyFour.appendChild(firstPiece);
       firstPiece.classList.add("first-piece");
