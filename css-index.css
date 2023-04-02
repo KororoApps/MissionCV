@@ -143,7 +143,7 @@ body {
   padding: 0;
 }
 
-.modal-close,
+/* .modal-close, */
 .button-next,
 .button-retrieve,
 .download-cv {
@@ -163,7 +163,7 @@ body {
   cursor: pointer;
 }
 
-.modal-close {
+/* .modal-close {
   animation: blinkModalClose 0.8s infinite;
 }
 
@@ -173,18 +173,18 @@ body {
   100% {
     border: white solid 4px;
   }
-}
+} */
 
-.modal-close:hover,
+/* .modal-close:hover, */
 .button-next:hover,
 .button-retrieve:hover,
 .download-cv:hover {
   filter: brightness(1.2);
 }
 
-.modal-close {
+/* .modal-close {
   display: none;
-}
+} */
 
 .story-container {
   position: relative;

@@ -19,7 +19,7 @@ export function worldbarCreate(element, ELEMENTS, containerPlanet) {
   });
 }
 
-function worldbarActive(element, ELEMENTS, active, containerPlanet) {
+export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
   //CREER DANS LA WORLDBAR LA BALISE POUR LE BACKGROUND ET LA BALISE POUR LE CV
 
   if (active) {

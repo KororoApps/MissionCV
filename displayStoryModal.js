@@ -1,4 +1,6 @@
+import { ELEMENTS } from "./elements.js";
 import { STORIES } from "./stories.js";
+import { worldbarActive, worldbarCreate } from "./worldbarCreator.js";
 import { writer } from "./writerFunction.js";
 
 const buttonNext = document.querySelector(".button-next");
@@ -47,8 +49,6 @@ function nextImageStory(imageStory) {
     //SI CLICKCOUNTER == 3, CLIGNOTER ET AFFICHER LE BOUTON PRET
     if (clickCounter == STORIES.length - 1) {
       buttonNext.style.display = "none";
-      modalClose.style.display = "initial";
-      modalClose.style.animationPlayState = "paused";
       setTimeout(() => {
         blinkParchment.style.display = "initial";
       }, 5000);
@@ -59,14 +59,26 @@ function nextImageStory(imageStory) {
 function readyToContinue() {
   //EN CLIQUANT SUR LE PARCHEMIN QUI CLIGNOTE, L'ANIMATION S'ARRETE + PETIT MOT D'ENCOURAGEMENT
   blinkParchment.querySelector("img").addEventListener("click", () => {
-    const clickImage = document.querySelector(".click");
-    clickImage.style.visibility = "hidden";
-    blinkParchment.style.animation = "initial";
-    const firstPiece = document.createElement("div");
-    blinkParchment.appendChild(firstPiece);
-    firstPiece.classList.add("first-piece");
-    firstPiece.innerHTML = `Bravo ! Vous avez récupéré un premier morceau ! <br> 
-      Allez sur la planète Terre pour le voir de plus près !`;
-    modalClose.style.animationPlayState = "running";
+    const worldBar = document.getElementById("world-bar");
+    modal.close();
+    const introPlanet = document.getElementById("intro-planet");
+    //DEPLOYER LA WORLDBAR
+    const active = worldBar.classList.toggle("active");
+    //GROSSIR LA DIV DE LA PLANETE
+    introPlanet.classList.toggle("active");
+    //TRANSLATE GALAXY
+    galaxy.classList.toggle("active");
+    //SI WORLDBARD ACTIVE...
+    worldbarActive(ELEMENTS[0], ELEMENTS, active, introPlanet);
+    // worldbarCreate(ELEMENTS[0], ELEMENTS, introPlanet);
+    // const clickImage = document.querySelector(".click");
+    // clickImage.style.visibility = "hidden";
+    // blinkParchment.style.animation = "initial";
+    // const firstPiece = document.createElement("div");
+    // blinkParchment.appendChild(firstPiece);
+    // firstPiece.classList.add("first-piece");
+    // firstPiece.innerHTML = `Bravo ! Vous avez récupéré un premier morceau ! <br>
+    //   Allez sur la planète Terre pour le voir de plus près !`;
+    // modalClose.style.animationPlayState = "running";
   });
 }
