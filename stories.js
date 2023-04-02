@@ -1,3 +1,5 @@
+//IMAGES DE L'HISTOIRE D'INTRODUCTION ET TEXTES ASSOCIES
+
 export const STORY = [
   {
     image: "./Cv_Galaxy/story/story_01.png",

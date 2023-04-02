@@ -1,3 +1,5 @@
+//CREATION ET PARAMETRAGE DES PLANETES
+
 export const ELEMENTS = [
   {
     id: "intro-planet",

@@ -1,12 +1,30 @@
-import { STORY } from "./js-storyManager.js";
-import { writer } from "./js-writerFunction.js";
+import { STORY } from "./stories.js";
+import { writer } from "./writerFunction.js";
 
 const buttonNext = document.querySelector(".button-next");
 const blinkParchment = document.getElementById("blink-parchment");
 const modalClose = document.querySelector(".modal-close");
+const modal = document.querySelector(".modal");
 
-export function storyScroll() {
-  let clickCounter = 0;
+let clickCounter = 0;
+
+export function displayStoryModal() {
+  //OUVERTURE DE LA MODAL
+  modal.showModal();
+  //CREATION DE LA DIV STORY ACCUEILLANT UNE IMAGE ET UN TEXTE
+  const imageStory = createStory();
+  //AFFICHAGE DE LA 1er IMAGE
+  imageStory.src = STORY[clickCounter].image;
+  //AFFICHAGE DU 1er TEXTE
+  writer(STORY[clickCounter].txt);
+  //AFFICHAGE DES IMAGES SUIVANTES SUIVANT LE NOMBRE DE CLIQUES SUR "SUIVANT"
+  nextImageStory(imageStory);
+  //EN CLIQUANT SUR LE PARCHEMIN QUI CLIGNOTE, L'ANIMATION S'ARRETE + PETIT MOT D'ENCOURAGEMENT
+  readyToContinue();
+}
+
+function createStory() {
+  //CREATION DE LA DIV STORY ACCUEILLANT UNE IMAGE ET UN TEXTE
   const story = document.createElement("div");
   blinkParchment.before(story);
   story.classList.add("story");
@@ -17,11 +35,10 @@ export function storyScroll() {
   const textStory = document.createElement("p");
   story.appendChild(textStory);
   textStory.classList.add("speak");
-  //AFFICHAGE DE LA 1er IMAGE
-  imageStory.src = STORY[clickCounter].image;
-  //AFFICHAGE DU 1er TEXTE
-  //textStory.innerHTML = `${STORY[clickCounter].txt}`;
-  writer(STORY[clickCounter].txt);
+  return imageStory;
+}
+
+function nextImageStory(imageStory) {
   //AFFICHAGE DES IMAGES SUIVANTES SUIVANT LE NOMBRE DE CLIQUES SUR "SUIVANT"
   buttonNext.addEventListener("click", () => {
     clickCounter++;
@@ -37,6 +54,9 @@ export function storyScroll() {
       }, 5000);
     }
   });
+}
+
+function readyToContinue() {
   //EN CLIQUANT SUR LE PARCHEMIN QUI CLIGNOTE, L'ANIMATION S'ARRETE + PETIT MOT D'ENCOURAGEMENT
   blinkParchment.querySelector("img").addEventListener("click", () => {
     const clickImage = document.querySelector(".click");

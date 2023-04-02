@@ -1,3 +1,5 @@
+//GUIDE POUR COMPRENDRE COMMENT JOUER
+
 const modalClose = document.querySelector(".modal-close");
 const modal = document.querySelector(".modal");
 
