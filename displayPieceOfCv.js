@@ -11,10 +11,18 @@ export function displayPieceOfCv(
   containerPlanet,
   worldbar
 ) {
+  let pieceOfCvExist = false;
   //LORSQUE CLICK SUR PARCHEMIN...
   parchmentWorld.addEventListener("click", () => {
     //AFFICHAGE DU MORCEAU DE CV
-    if (clickCounterPieceCV % 2 == 0) {
+    if (pieceOfCvExist) {
+      const pieceOfCV = document.querySelector(".piece-of-cv");
+      pieceOfCV.remove();
+      clickCounterPieceCV++;
+      pieceOfCvExist = false;
+    }
+    //SINON SI PAS TOUT RECUPERE, SUPPRIMER MORCEAU DE CV
+    else {
       containerImages.appendChild(pieceOfCV);
       pieceOfCV.classList.add("piece-of-cv");
       pieceOfCV.innerHTML = element.pieceOfCV;
@@ -22,6 +30,7 @@ export function displayPieceOfCv(
 
       pieceOfCV.appendChild(buttonRetrieve);
       buttonRetrieve.classList.add("button-retrieve");
+      pieceOfCvExist = true;
       //VALIDER LORSQUE LE MORCEAU DE CV EST RECUPERE
 
       if (!element.cvRetrieve) {
@@ -31,15 +40,10 @@ export function displayPieceOfCv(
           //CHANGEMENT BOUTTON QUAND CV RECUPERE
           buttonRetrieve.innerHTML = "Récupéré !";
           buttonRetrieve.style.backgroundColor = "green";
+
           allCvRetrieve(ELEMENTS, containerPlanet, worldbar);
         });
       }
-    }
-    //SINON SI PAS TOUT RECUPERE, SUPPRIMER MORCEAU DE CV
-    else {
-      const pieceOfCV = document.querySelector(".piece-of-cv");
-      pieceOfCV.remove();
-      clickCounterPieceCV++;
     }
   });
 }

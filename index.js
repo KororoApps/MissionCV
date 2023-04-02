@@ -1,4 +1,4 @@
-import { galaxyCreator } from "./galaxyCreator.js";
+import { createGalaxy } from "./galaxyCreator.js";
 import { gameGuide } from "./gameGuide.js";
 import { displayStoryModal } from "./displayStoryModal.js";
 
@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
 });
 
 //CREATION GALAXY
-galaxyCreator();
+createGalaxy();
 
 //GUIDE DE JEU
 gameGuide();

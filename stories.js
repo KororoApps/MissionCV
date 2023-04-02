@@ -1,6 +1,6 @@
 //IMAGES DE L'HISTOIRE D'INTRODUCTION ET TEXTES ASSOCIES
 
-export const STORY = [
+export const STORIES = [
   {
     image: "./Cv_Galaxy/story/story_01.png",
     txt: `Haaaaa ! Mon CV ! <br> Noooon, revenez !!`,

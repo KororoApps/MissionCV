@@ -3,12 +3,12 @@ import { worldbarCreate } from "./worldbarCreator.js";
 
 const galaxy = document.getElementById("galaxy");
 
-export const galaxyCreator = () => {
+export const createGalaxy = () => {
   ELEMENTS.forEach((element) => {
     //CREATION DE LA DIV ACCUEILLANT LA PLANETE, LA TARGET, LA WORLDBAR
-    const containerPlanet = planetCreate(element);
+    const containerPlanet = createPlanet(element);
     //POSITIONEMENT DE CHAQUE TARGET
-    targetCreate(element, containerPlanet);
+    createTarget(element, containerPlanet);
     //CREATION DE LA BALISE ACCUEILLANT L'IMAGE DE LA PLANETE
     imagePlanet(element, containerPlanet);
     //AU CLIC SUR LA PLANETE DEPLOIEMENT DE LA WORLDBAR, AGRANDISSEMENT DE LA PLANETE...
@@ -16,7 +16,7 @@ export const galaxyCreator = () => {
   });
 };
 
-function planetCreate(element) {
+function createPlanet(element) {
   //CREATION DE LA DIV ACCUEILLANT LA PLANETE, LA TARGET, LA WORLD BAR
   const containerPlanet = document.createElement("div");
   galaxy.appendChild(containerPlanet);
@@ -28,7 +28,7 @@ function planetCreate(element) {
   return containerPlanet;
 }
 
-function targetCreate(element, containerPlanet) {
+function createTarget(element, containerPlanet) {
   //POSITIONEMENT DE CHAQUE TARGET
   containerPlanet.style.setProperty("--target-width", element.targetWidth);
   containerPlanet.style.setProperty("--target-height", element.targetHeight);

@@ -1,4 +1,4 @@
-import { STORY } from "./stories.js";
+import { STORIES } from "./stories.js";
 import { writer } from "./writerFunction.js";
 
 const buttonNext = document.querySelector(".button-next");
@@ -14,9 +14,9 @@ export function displayStoryModal() {
   //CREATION DE LA DIV STORY ACCUEILLANT UNE IMAGE ET UN TEXTE
   const imageStory = createStory();
   //AFFICHAGE DE LA 1er IMAGE
-  imageStory.src = STORY[clickCounter].image;
+  imageStory.src = STORIES[clickCounter].image;
   //AFFICHAGE DU 1er TEXTE
-  writer(STORY[clickCounter].txt);
+  writer(STORIES[clickCounter].txt);
   //AFFICHAGE DES IMAGES SUIVANTES SUIVANT LE NOMBRE DE CLIQUES SUR "SUIVANT"
   nextImageStory(imageStory);
   //EN CLIQUANT SUR LE PARCHEMIN QUI CLIGNOTE, L'ANIMATION S'ARRETE + PETIT MOT D'ENCOURAGEMENT
@@ -42,10 +42,10 @@ function nextImageStory(imageStory) {
   //AFFICHAGE DES IMAGES SUIVANTES SUIVANT LE NOMBRE DE CLIQUES SUR "SUIVANT"
   buttonNext.addEventListener("click", () => {
     clickCounter++;
-    imageStory.src = STORY[clickCounter].image;
-    writer(STORY[clickCounter].txt);
+    imageStory.src = STORIES[clickCounter].image;
+    writer(STORIES[clickCounter].txt);
     //SI CLICKCOUNTER == 3, CLIGNOTER ET AFFICHER LE BOUTON PRET
-    if (clickCounter == STORY.length - 1) {
+    if (clickCounter == STORIES.length - 1) {
       buttonNext.style.display = "none";
       modalClose.style.display = "initial";
       modalClose.style.animationPlayState = "paused";
