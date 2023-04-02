@@ -181,102 +181,107 @@ const ELEMENTS = [
   },
 ];
 
+const STORY = [
+  {
+    image: "./Cv_Galaxy/story/story_01.png",
+    txt: `Haaaaa ! Mon CV ! <br> Noooon, revenez !!`,
+  },
+  {
+    image: "./Cv_Galaxy/story/story_02.png",
+    txt: `Les chats de l'espace ont encore sévi ! <br>
+Ils volent les CV afin que les humains ne trouvent pas de travail et passent leur temps chez eux avec leur chat !`,
+  },
+  {
+    image: "./Cv_Galaxy/story/story_03.png",
+    txt: `Est-ce que voulez bien m'aider à retrouver mon CV ? <br>
+Je crois qu'ils l'ont dispersé dans le multivers. <br> J'ai seulement pu retrouver ce morceau...`,
+  },
+];
+
 const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close");
+const storyContainer = document.querySelector(".story-container");
+const buttonNext = document.querySelector(".button-next");
+const blinkParchment = document.getElementById("blink-parchment");
+
+//FONCTION POUR FAIRE DEFILER LE TEXTE
+let timeoutWriter;
+function writer(text) {
+  if (timeoutWriter) {
+    clearTimeout(timeoutWriter);
+  }
+
+  const speak = document.querySelector(".speak");
+  speak.innerHTML = "";
+  timeoutWriter = setTimeout(() => {
+    typewriter(text, 0);
+  }, 500);
+  function typewriter(text, index) {
+    if (index < text.length) {
+      timeoutWriter = setTimeout(() => {
+        if (text.slice(index).startsWith("<br>")) {
+          speak.innerHTML += `<br>`;
+          index += 4;
+        } else {
+          speak.innerHTML += `${text[index]}`;
+        }
+        typewriter(text, index + 1);
+      }, 30);
+    } else {
+      speak.innerHTML = `${text}`;
+    }
+  }
+}
 
 //OUVERTURE INTRO DU CV
 window.addEventListener("load", () => {
   modal.showModal();
-});
-
-const buttonNext = document.querySelector(".button-next");
-const modalClose = document.querySelector(".modal-close");
-const storyOne = document.getElementById("story-one");
-const storyTwo = document.getElementById("story-two");
-const storyThree = document.getElementById("story-three");
-const storyFour = document.getElementById("story-four");
-const speakStoryOne = document.getElementById("speak-story-one");
-const speakStoryTwo = document.getElementById("speak-story-two");
-const speakStoryThree = document.getElementById("speak-story-three");
-
-const speaks = document.querySelectorAll(".speak");
-const txt1 = `Haaaaa ! Mon CV ! <br> Noooon, revenez !!`;
-const txt2 = `Les chats de l'espace ont encore sévi ! <br>
-Ils volent les CV afin que les humains ne trouvent pas de travail et passent leur temps chez eux avec leur chat !`;
-const txt3 = `Est-ce que voulez bien m'aidez à retrouver mon CV ? <br>
-Je crois qu'ils l'ont dispersé dans le multivers. <br> J'ai seulement pu retrouver ce morceau...`;
-
-let timeoutWriter;
-
-function writer(word) {
-  speaks.forEach((speak) => {
-    speak.innerHTML = "";
-    function typewriter(word, index) {
-      if (index < word.length) {
-        timeoutWriter = setTimeout(() => {
-          if (word.slice(index).startsWith("<br>")) {
-            speak.innerHTML += `<br>`;
-            index += 4;
-          } else {
-            speak.innerHTML += `${word[index]}`;
-          }
-
-          typewriter(word, index + 1);
-        }, 30);
-      } else {
-        speak.innerHTML = `${word}`;
-      }
-    }
-    setTimeout(() => {
-      typewriter(word, 0);
-    }, 500);
-  });
-}
-
-writer(txt1);
-
-let clickCounter = 0;
-//FAIRE DEFILER L'HISTOIRE
-
-buttonNext.addEventListener("click", () => {
-  if (clickCounter == 0) {
-    storyOne.style.display = "none";
-    speakStoryOne.style.display = "none";
-    clearTimeout(timeoutWriter);
-    writer(txt2);
-    storyTwo.style.display = "initial";
-    speakStoryTwo.style.display = "initial";
+  let clickCounter = 0;
+  const story = document.createElement("div");
+  blinkParchment.before(story);
+  story.classList.add("story");
+  const imageStory = document.createElement("img");
+  story.appendChild(imageStory);
+  imageStory.classList.add("image-story");
+  imageStory.classList.add("story");
+  const textStory = document.createElement("p");
+  story.appendChild(textStory);
+  textStory.classList.add("speak");
+  //AFFICHAGE DE LA 1er IMAGE
+  imageStory.src = STORY[clickCounter].image;
+  //AFFICHAGE DU 1er TEXTE
+  //textStory.innerHTML = `${STORY[clickCounter].txt}`;
+  writer(STORY[clickCounter].txt);
+  //AFFICHAGE DES IMAGES SUIVANTES SUIVANT LE NOMBRE DE CLIQUES SUR "SUIVANT"
+  buttonNext.addEventListener("click", () => {
     clickCounter++;
-  } else if (clickCounter == 1) {
-    storyTwo.style.display = "none";
-    speakStoryTwo.style.display = "none";
-    clearTimeout(timeoutWriter);
-    writer(txt3);
-    storyThree.style.display = "initial";
-    setTimeout(() => {
-      storyFour.style.display = "initial";
-    }, 5000);
-    speakStoryThree.style.display = "initial";
-    buttonNext.style.display = "none";
-    modalClose.style.display = "initial";
-    storyFour.addEventListener("click", () => {
-      const clickImage = document.querySelector(".click");
-      clickImage.style.visibility = "hidden";
-      storyFour.style.animationPlayState = "paused";
-      const firstPiece = document.createElement("div");
-      storyFour.appendChild(firstPiece);
-      firstPiece.classList.add("first-piece");
-      firstPiece.innerHTML = `Bravo ! Vous avez récupéré un premier morceau ! <br> 
-      Allez sur la planète Terre pour le voir de plus près !`;
-    });
-  }
+    imageStory.src = STORY[clickCounter].image;
+    writer(STORY[clickCounter].txt);
+    //SI CLICKCOUNTER == 3, CLIGNOTER ET AFFICHER LE BOUTON PRET
+    if (clickCounter == STORY.length - 1) {
+      buttonNext.style.display = "none";
+      modalClose.style.display = "initial";
+      modalClose.style.animationPlayState = "paused";
+      setTimeout(() => {
+        blinkParchment.style.display = "initial";
+      }, 5000);
+    }
+  });
+  //EN CLIQUANT SUR LE PARCHEMIN QUI CLIGNOTE, L'ANIMATION S'ARRETE + PETIT MOT D'ENCOURAGEMENT
+  blinkParchment.querySelector("img").addEventListener("click", () => {
+    const clickImage = document.querySelector(".click");
+    clickImage.style.visibility = "hidden";
+    blinkParchment.style.animation = "initial";
+    const firstPiece = document.createElement("div");
+    blinkParchment.appendChild(firstPiece);
+    firstPiece.classList.add("first-piece");
+    firstPiece.innerHTML = `Bravo ! Vous avez récupéré un premier morceau ! <br> 
+    Allez sur la planète Terre pour le voir de plus près !`;
+    modalClose.style.animationPlayState = "running";
+  });
 });
 
 //FERMETURE INTRO DU CV
-
-modalClose.addEventListener("click", () => {
-  modal.close();
-});
-
 const galaxy = document.getElementById("galaxy");
 const worldBar = document.getElementById("world-bar");
 let translateGalaxyX;
@@ -286,7 +291,8 @@ ELEMENTS.forEach((element) => {
   //CREATION DE LA DIV ACCUEILLANT LA PLANETE, LA TARGET, L'IMAGE ET LE CV
   const containerPlanet = document.createElement("div");
   galaxy.appendChild(containerPlanet);
-  containerPlanet.classList.add("containerPlanet");
+  containerPlanet.classList.add("container-planet");
+  containerPlanet.id = element.id;
   containerPlanet.style.top = element.top;
   containerPlanet.style.left = element.left;
   containerPlanet.style.setProperty("--target-width", element.targetWidth);
@@ -454,4 +460,19 @@ ELEMENTS.forEach((element) => {
       containerImage.remove();
     }
   });
+});
+
+//LA PLANETE TERRE NE CLIGNOTE PAS
+const introPlanet = document.getElementById("intro-planet");
+introPlanet.style.animationPlayState = "paused";
+
+//SI ON SURVOLE LA PLANETE TERRE, LE CLIGNOTTEMENT S'ARRETE
+introPlanet.addEventListener("mouseover", () => {
+  introPlanet.style.animation = "initial";
+});
+
+//A LA FERMETURE DE LA MODAL, LA PLANETE TERRE CLIGNOTE
+modalClose.addEventListener("click", () => {
+  modal.close();
+  introPlanet.style.animationPlayState = "running";
 });
