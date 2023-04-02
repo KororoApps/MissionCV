@@ -1,4 +1,5 @@
 import { displayPieceOfCv } from "./displayPieceOfCv.js";
+import { textIntroPlanet } from "./displayStoryModal.js";
 import { cvRetrieve } from "./retrievePieceOfCv.js";
 
 const worldBar = document.getElementById("world-bar");
@@ -29,8 +30,6 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
       containerPlanet
     );
 
-    //COMPTER LE NOMBRE DE CLICK SUR LE CV
-    let clickCounterPieceCV = 0;
     //CREATION DE LA DIV ACCUEILLANT L'EXTRAIT DE CV
     const pieceOfCV = document.createElement("div");
     //CREATION DU BOUTTON POUR RECUPERER LE MORCEAU DE CV
@@ -41,7 +40,6 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     displayPieceOfCv(
       parchmentWorld,
       containerImages,
-      clickCounterPieceCV,
       pieceOfCV,
       buttonRetrieve,
       element,
@@ -49,6 +47,10 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
       containerPlanet,
       worldBar
     );
+
+    if (element.id == "intro-planet") {
+      textIntroPlanet();
+    }
 
     //SINON, SUPPRESSION DE LA DIV ET DES IMAGES DE WORLDBAR
   } else {

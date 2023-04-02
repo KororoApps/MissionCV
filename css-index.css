@@ -225,7 +225,8 @@ body {
   }
 }
 
-.speak {
+.speak,
+.speak-intro-planet {
   position: absolute;
   color: aliceblue;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -238,6 +239,12 @@ body {
   width: 490px;
   padding: 20px;
   border-radius: 5px;
+}
+
+.speak-intro-planet {
+  width: 400px;
+  left: 32%;
+  top: 50%;
 }
 
 #speak-story-two {

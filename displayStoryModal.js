@@ -69,7 +69,10 @@ function readyToContinue() {
     //TRANSLATE GALAXY
     galaxy.classList.toggle("active");
     //SI WORLDBARD ACTIVE...
+
     worldbarActive(ELEMENTS[0], ELEMENTS, active, introPlanet);
+    textIntroPlanet();
+
     // worldbarCreate(ELEMENTS[0], ELEMENTS, introPlanet);
     // const clickImage = document.querySelector(".click");
     // clickImage.style.visibility = "hidden";
@@ -81,4 +84,27 @@ function readyToContinue() {
     //   Allez sur la planète Terre pour le voir de plus près !`;
     // modalClose.style.animationPlayState = "running";
   });
+}
+
+export function textIntroPlanet() {
+  let counter = counterTrue(ELEMENTS);
+  const containerIntroPlanet = document.querySelector(".container-background");
+  const speakIntroPlanet = document.createElement("p");
+  containerIntroPlanet.appendChild(speakIntroPlanet);
+  speakIntroPlanet.classList.add("speak-intro-planet");
+  speakIntroPlanet.innerHTML = `Merci ! Déjà ${counter} morceau de trouvé ! <br> 
+  Faites un tour dans la galaxie et n'hésitez pas <br> à visiter chaque planète que vous verrez. <br> 
+  Je crois qu'il reste ${
+    ELEMENTS.length - counter
+  } morceaux de mon CV à trouver...`;
+}
+
+function counterTrue(ELEMENTS) {
+  let counterTrue = 0;
+  ELEMENTS.forEach((element) => {
+    if (element.cvRetrieve == true) {
+      counterTrue++;
+    }
+  });
+  return counterTrue;
 }

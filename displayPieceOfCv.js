@@ -3,7 +3,6 @@ import { allCvRetrieve } from "./retrievePieceOfCv.js";
 export function displayPieceOfCv(
   parchmentWorld,
   containerImages,
-  clickCounterPieceCV,
   pieceOfCV,
   buttonRetrieve,
   element,
@@ -18,7 +17,6 @@ export function displayPieceOfCv(
     if (pieceOfCvExist) {
       const pieceOfCV = document.querySelector(".piece-of-cv");
       pieceOfCV.remove();
-      clickCounterPieceCV++;
       pieceOfCvExist = false;
     }
     //SINON SI PAS TOUT RECUPERE, SUPPRIMER MORCEAU DE CV
@@ -26,7 +24,6 @@ export function displayPieceOfCv(
       containerImages.appendChild(pieceOfCV);
       pieceOfCV.classList.add("piece-of-cv");
       pieceOfCV.innerHTML = element.pieceOfCV;
-      clickCounterPieceCV++;
 
       pieceOfCV.appendChild(buttonRetrieve);
       buttonRetrieve.classList.add("button-retrieve");
