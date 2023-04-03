@@ -18,11 +18,10 @@ export const ELEMENTS = [
     topPosition: "50%",
     pieceOfCV: `<h1>ELODIE SPONTON</h1> 
       <h4>DEVELOPPEUSE WEB</h4>
-      <h3>COORDONNEES</h3>
-      <p>Tél : 06 42 96 52 26</p>
-      <p>Mail : elodie.sponton@yahoo.fr</p>
-      <p>Adresse : 4H allée de la 1er Division Fr Libre</p>
-      <p>21000 DIJON</p>`,
+      <h2>COORDONNEES</h2>
+      <p><span>Tél</span> : 06 42 96 52 26</p>
+      <p><span>Mail</span>: elodie.sponton@yahoo.fr</p>
+      <p><span>Adresse</span> : 4H allée de la 1er Division Fr Libre, 21000 DIJON</p>`,
     cvRetrieve: true,
   },
   {
@@ -72,11 +71,11 @@ export const ELEMENTS = [
     topPosition: "50%",
     pieceOfCV: `<h2>FORMATIONS</h2> 
       <h3>Titre de niveau II, Responsable QSE</h3>
-      <h4>2014-2016 / CESI Entreprise, Dijon</h4>
+      <p>2014-2016 / CESI Entreprise, Dijon</p>
       <h3>Master 2, Management des Risques Industriels et Environnementaux</h3>
-      <h4>2012-2013 / Université de Poitiers</h4>
+      <p>2012-2013 / Université de Poitiers, Niort</p>
       <h3>Master 2, Espace Rural et Environnement</h3>
-      <h4>2011-2012 / Université de Bourgogne</h4>`,
+      <p>2011-2012 / Université de Bourgogne, Dijon</p>`,
     cvRetrieve: false,
   },
   {
@@ -97,14 +96,14 @@ export const ELEMENTS = [
     rightPosition: "50%",
     topPosition: "50%",
     pieceOfCV: `<h2>EXPERIENCES PROFESSIONNELLES</h2> 
-      <h3>Assistante admnistrative - Sanitel</h3>
-      <h4>Octobre 2017 - En cours</h4>
+      <h3>Assistante admnistrative</h3>
+      <p><span>Octobre 2017 - En cours / Sanitel, Dijon</span></p>
       <p>Accueil physique et téléphonique, Établissement de DC4 et contrat de sous-traitance, Vérification des factures...</p>
-      <h3>Assistane administrative - Loiseau Volets Roulants</h3>
-      <h4>Février - Octobre 2017</h4>
+      <h3>Assistante administrative</h3>
+      <p><span>Février - Octobre 2017 / Loiseau Volets Roulants, Dijon</span></p>
       <p>Prise et suivie de commandes, Suivide de la trésorerie, Accueil physique et téléphonique.</p>
-      <h3>Ingénieure QSE - Schneider Electric</h3>
-      <h4>Septembre 2014 - Mars 2016</h4>
+      <h3>Ingénieure QSE</h3>
+      <p><span>Septembre 2014 - Mars 2016 / Schneider Electric, Dijon</span></p>
       <p>Unification du système de management de deux usines.</p>`,
     cvRetrieve: false,
   },
@@ -126,10 +125,14 @@ export const ELEMENTS = [
     rightPosition: "50%",
     topPosition: "40%",
     pieceOfCV: `<h2>INTÉRÊTS ET LOISIRS</h2> 
-      <h4>Dessin et création</h4>
-      <p>Animation d'un blog Wordpress et d'un compte Instagram.</p>
-      <p>Création de vidéos Tiktok.</p>
-      <p>Participation à l'Inktober depuis 2016.</p>`,
+      <h3>- Animation d'un blog Wordpress depuis 2013</h3>
+      <p>638 articles à ce jour</p>
+      <h3>- Animation d'un compte Instagram depuis 2015</h3>
+      <p>723 publications à ce jour</p> 
+      <h3>- Création de vidéos Tiktok depuis 2020</h3>
+      <p>121 vidéos à ce jour</p>
+      <h3>- Participation à l'Inktober depuis 2016</h3>
+      <p>Publication de 31 dessins tout le long du mois d'octobre</p>`,
     cvRetrieve: false,
   },
   {
@@ -150,9 +153,12 @@ export const ELEMENTS = [
     rightPosition: "50%",
     topPosition: "20%",
     pieceOfCV: `<h2>PROJETS PERSONNELS</h2> 
+    <h3>- Création de ce CV intéractif</h3>
+      <p><a href="https://kororoapps.github.io/MissionCV/">https://kororoapps.github.io/MissionCV/</a></p>
       <h3>- Création d'un jeu de tir pour m'exercer à Javascript</h3>
-      <p>https://kororoapps.github.io/ShootTeemo/</p>
-      <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>`,
+      <p><a href="https://kororoapps.github.io/ShootTeemo/">https://kororoapps.github.io/ShootTeemo/</a></p>
+      <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>
+      <p>En cours</p>`,
     cvRetrieve: false,
   },
   {
@@ -173,10 +179,11 @@ export const ELEMENTS = [
     rightPosition: "50%",
     topPosition: "20%",
     pieceOfCV: `<h2>PROFIL PERSONNEL</h2> 
-      <p>Autonome</p>
-      <p>Créative</p>
-      <p>Persévérante</p>
-      <p>Je suis confiante dans ma capacité à progresser</p>`,
+      <p>Autonome,</p>
+      <p>Créative,</p>
+      <p>Persévérante.</p>
+      <br>
+      <p>Je suis confiante dans ma capacité à progresser.</p>`,
     cvRetrieve: false,
   },
 ];
