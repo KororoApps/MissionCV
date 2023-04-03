@@ -1,0 +1,53 @@
+.modal::backdrop {
+  background-color: rgba(74, 12, 85, 0.438);
+}
+
+.modal {
+  overflow: hidden;
+  padding: 0;
+}
+
+.story-container {
+  position: relative;
+  left: 0;
+}
+
+.story {
+  max-height: 60vh;
+  max-width: 60vw;
+  display: block;
+}
+
+.story ~ .story {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  max-height: 60vh;
+  max-width: 60vw;
+}
+
+#blink-parchment {
+  display: none;
+  animation: paperBlink 0.8s infinite;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.click {
+  max-height: 60vh;
+  max-width: 60vw;
+}
+
+@keyframes paperBlink {
+  0% {
+  }
+  100% {
+    background-image: url("./Cv_Galaxy/story/story_04.png");
+  }
+}
+
+@media (orientation: landscape) and (max-device-width: 800px) {
+  .click {
+    display: none;
+  }
+}

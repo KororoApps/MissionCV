@@ -9,7 +9,7 @@ export function writer(text) {
   speak.innerHTML = "";
   timeoutWriter = setTimeout(() => {
     typewriter(text, 0);
-  }, 100);
+  }, 200);
   function typewriter(text, index) {
     if (index < text.length) {
       timeoutWriter = setTimeout(() => {

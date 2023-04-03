@@ -1,0 +1,11 @@
+.piece-of-cv {
+  position: relative;
+  height: 50vh;
+  margin-top: 3%;
+  padding: 10px 15px;
+  background-color: aliceblue;
+}
+
+.piece-of-cv h1 {
+  color: blueviolet;
+}

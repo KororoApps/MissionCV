@@ -1,11 +1,10 @@
 import { ELEMENTS } from "./elements.js";
 import { STORIES } from "./stories.js";
-import { worldbarActive, worldbarCreate } from "./worldbarCreator.js";
+import { worldbarActive } from "./worldbarCreator.js";
 import { writer } from "./writerFunction.js";
 
 const buttonNext = document.querySelector(".button-next");
 const blinkParchment = document.getElementById("blink-parchment");
-const modalClose = document.querySelector(".modal-close");
 const modal = document.querySelector(".modal");
 
 let clickCounter = 0;

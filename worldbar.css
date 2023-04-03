@@ -1,0 +1,15 @@
+#world-bar {
+  position: fixed;
+  background-color: aliceblue;
+  width: 36vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease-out;
+  overflow-y: scroll;
+  transform: translateX(100%);
+}
+
+#world-bar.active {
+  transform: initial;
+}
