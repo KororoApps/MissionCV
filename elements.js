@@ -126,11 +126,11 @@ export const ELEMENTS = [
     topPosition: "40%",
     pieceOfCV: `<h2>INTÉRÊTS ET LOISIRS</h2> 
       <h3>- Animation d'un blog Wordpress depuis 2013</h3>
-      <p>638 articles à ce jour</p>
+      <p>638 articles au 03/04/2023</p>
       <h3>- Animation d'un compte Instagram depuis 2015</h3>
-      <p>723 publications à ce jour</p> 
+      <p>723 publications au 03/04/2023</p> 
       <h3>- Création de vidéos Tiktok depuis 2020</h3>
-      <p>121 vidéos à ce jour</p>
+      <p>121 vidéos au 03/04/2023</p>
       <h3>- Participation à l'Inktober depuis 2016</h3>
       <p>Publication de 31 dessins tout le long du mois d'octobre</p>`,
     cvRetrieve: false,
@@ -154,9 +154,9 @@ export const ELEMENTS = [
     topPosition: "20%",
     pieceOfCV: `<h2>PROJETS PERSONNELS</h2> 
     <h3>- Création de ce CV intéractif</h3>
-      <p><a href="https://kororoapps.github.io/MissionCV/">https://kororoapps.github.io/MissionCV/</a></p>
+      <p><a href="https://kororoapps.github.io/MissionCV/" target="_blank">https://kororoapps.github.io/MissionCV/</a></p>
       <h3>- Création d'un jeu de tir pour m'exercer à Javascript</h3>
-      <p><a href="https://kororoapps.github.io/ShootTeemo/">https://kororoapps.github.io/ShootTeemo/</a></p>
+      <p><a href="https://kororoapps.github.io/ShootTeemo/" target="_blank">https://kororoapps.github.io/ShootTeemo/</a></p>
       <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>
       <p>En cours</p>`,
     cvRetrieve: false,

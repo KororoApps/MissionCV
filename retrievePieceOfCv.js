@@ -21,10 +21,12 @@ export function cvRetrieve(
 //SI TOUS LES CV SONT RECUPERES...
 export function allCvRetrieve(ELEMENTS, containerPlanet, worldBar) {
   if (ELEMENTS.every((element) => element.cvRetrieve)) {
-    worldBar.classList.toggle("active");
-    containerPlanet.classList.toggle("active");
+    const containerImages = document.querySelector(".container-images");
+    worldBar.classList.remove("active");
+    containerImages.remove();
+    containerPlanet.classList.remove("active");
     //TRANSLATE GALAXY
-    galaxy.classList.toggle("active");
+    galaxy.classList.remove("active");
     const txtCvComplete = document.createElement("div");
     galaxy.appendChild(txtCvComplete);
     txtCvComplete.classList.add("txt-cv-complete");
