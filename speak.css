@@ -107,7 +107,7 @@
 }
 
 /*SMARTPHONE*/
-@media (orientation: portrait) and (max-width: 500px) {
+@media (orientation: portrait) and (max-width: 499px) {
   .speak {
     font-size: 0.9em;
     border: 2px solid rgb(74, 12, 85);

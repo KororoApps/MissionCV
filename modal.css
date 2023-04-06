@@ -33,11 +33,6 @@
   background-size: contain;
 }
 
-.click {
-  max-height: 60vh;
-  max-width: 60vw;
-}
-
 @keyframes paperBlink {
   0% {
   }
