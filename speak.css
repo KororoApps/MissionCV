@@ -23,10 +23,12 @@
 /* ORIDNATEUR  */
 @media (max-height: 800px) and (max-width: 1600px) {
   .speak {
-    width: 53%;
-    padding: 7px;
+    font-size: 1.1em;
+    border: 3px solid rgb(74, 12, 85);
+    width: 50%;
+    padding: 2px;
     top: initial;
-    left: 24%;
+    left: 25%;
     margin-bottom: 1.2%;
   }
   #speak-story-three {
@@ -44,7 +46,11 @@
 @media (max-height: 350px) and (max-width: 1600px) {
   .speak {
     width: 45%;
-    font-size: 1em;
+    font-size: 0.9em;
+  }
+
+  #speak-story-three {
+    width: 70%;
   }
 }
 
@@ -70,9 +76,9 @@
     width: 65%;
   }
   #speak-story-three {
-    left: 35%;
-    width: 60%;
-    bottom: 30%;
+    left: 40%;
+    width: 55%;
+    bottom: 21%;
   }
 }
 
@@ -101,8 +107,7 @@
   }
   #speak-story-three,
   #speak-story-two {
-    left: 35%;
-    width: 52%;
+    width: 55%;
   }
 }
 
@@ -115,9 +120,14 @@
     width: 50%;
     left: 42%;
   }
-  #speak-story-three,
+
   #speak-story-two {
     left: 34%;
     width: 60%;
+  }
+
+  #speak-story-three {
+    left: 40%;
+    width: 55%;
   }
 }
