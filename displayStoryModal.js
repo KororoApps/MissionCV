@@ -12,6 +12,8 @@ let clickCounter = 0;
 export function displayStoryModal() {
   //OUVERTURE DE LA MODAL
   modal.showModal();
+  console.log(innerHeight);
+  console.log(innerWidth);
   //CREATION DE LA DIV STORY ACCUEILLANT UNE IMAGE ET UN TEXTE
   const imageStory = createStory();
   //AFFICHAGE DE LA 1er IMAGE
@@ -36,6 +38,7 @@ function createStory() {
   const textStory = document.createElement("p");
   story.appendChild(textStory);
   textStory.classList.add("speak");
+
   return imageStory;
 }
 
@@ -43,6 +46,9 @@ function nextImageStory(imageStory) {
   //AFFICHAGE DES IMAGES SUIVANTES SUIVANT LE NOMBRE DE CLIQUES SUR "SUIVANT"
   buttonNext.addEventListener("click", () => {
     clickCounter++;
+    const textStory = document.querySelector(".speak");
+    textStory.id = STORIES[clickCounter].id;
+    console.log(clickCounter);
     imageStory.src = STORIES[clickCounter].image;
     writer(STORIES[clickCounter].txt);
     //SI CLICKCOUNTER == 3, CLIGNOTER ET AFFICHER LE BOUTON PRET
