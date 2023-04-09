@@ -21,8 +21,8 @@ export const ELEMENTS = [
     pieceOfCV: `<h1>ELODIE SPONTON</h1> 
       <h4>DEVELOPPEUSE WEB</h4>
       <h2>COORDONNEES</h2>
-      <p><span>Tél</span> : 06 42 96 52 26</p>
-      <p><span>Mail</span>: elodie.sponton@yahoo.fr</p>
+      <p><span>Tél</span> : <a href="tel:0642965226">06 42 96 52 26</a></p>
+      <p><span>Mail</span>: <a href="mailto:elodie.sponton@yahoo.fr">elodie.sponton@yahoo.fr</a></p>
       <p><span>Adresse</span> : 4H allée de la 1er Division Fr Libre, 21000 DIJON</p>`,
     cvRetrieve: true,
   },

@@ -20,6 +20,10 @@
   top: 50%;
 }
 
+a {
+  color: rgb(74, 12, 85);
+}
+
 /* ORIDNATEUR  */
 @media (max-height: 800px) and (max-width: 1600px) {
   .speak {
