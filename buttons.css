@@ -26,25 +26,16 @@
 .button-retrieve {
   position: absolute;
   padding: 2px;
-  bottom: 89%;
+  bottom: 93%;
   right: 3%;
+  font-size: 1.3em;
 }
 
 @media (orientation: landscape) and (max-device-width: 800px) {
   .button-next {
     font-size: 1em;
   }
-
   .button-retrieve {
-    font-size: 0.6em;
-    bottom: 85%;
-    right: 75%;
-  }
-}
-
-@media (max-height: 600px) and (max-width: 1600px) {
-  .button-retrieve {
-    bottom: 2%;
-    right: 2%;
+    bottom: 89%;
   }
 }

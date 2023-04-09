@@ -2,7 +2,7 @@
   position: relative;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(48, 48, 60);
-  height: 50vh;
+  height: 70vh;
   margin-top: 3%;
   padding: 10px 15px;
   background-color: rgb(208, 205, 193);
@@ -10,7 +10,7 @@
 
 .piece-of-cv h1 {
   color: rgb(78, 76, 71);
-  margin-top: 10px;
+  margin-top: 35px;
 }
 
 .piece-of-cv h2 {
