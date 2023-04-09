@@ -6,7 +6,7 @@ const worldBar = document.getElementById("world-bar");
 let translateGalaxyX;
 let translateGalaxyY;
 
-function toggleActive(element, ELEMENTS, containerPlanet) {
+export function toggleActive(element, ELEMENTS, containerPlanet) {
   //DEPLOYER LA WORLDBAR
   const active = worldBar.classList.toggle("active");
   //GROSSIR LA DIV DE LA PLANETE
@@ -39,7 +39,7 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     //CREATION DU BOUTTON POUR RECUPERER LE MORCEAU DE CV
     const buttonRetrieve = document.createElement("button");
 
-    cvRetrieve(element, containerImages, pieceOfCV, buttonRetrieve);
+    cvRetrieve(element, containerImages, pieceOfCV, buttonRetrieve, ELEMENTS);
 
     displayPieceOfCv(
       parchmentWorld,

@@ -28,23 +28,34 @@
 
 .return-to-galaxy {
   position: absolute;
-  color: white;
+  color: rgb(74, 12, 85);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 1000;
+  font-weight: 500;
   font-size: 1.3em;
   right: 15px;
   top: 6px;
   margin: 2px;
-  -webkit-text-stroke: 0.7px rgb(74, 12, 85);
+  -webkit-text-stroke: 1px white;
 }
 
 .return-to-galaxy:hover {
-  color: rgb(74, 12, 85);
+  filter: brightness(2);
 }
 
 @media (max-height: 600px) and (max-width: 1600px) {
   .container-images {
     display: flex;
-    flex-direction: row;
+    overflow-y: hidden;
+  }
+  .container-background {
+    position: relative;
+    width: 50%;
+    height: 100%;
+  }
+  .background {
+    position: absolute;
+  }
+  .parchment {
+    position: absolute;
   }
 }
