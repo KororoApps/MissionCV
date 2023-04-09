@@ -6,17 +6,21 @@ const worldBar = document.getElementById("world-bar");
 let translateGalaxyX;
 let translateGalaxyY;
 
+function toggleActive(element, ELEMENTS, containerPlanet) {
+  //DEPLOYER LA WORLDBAR
+  const active = worldBar.classList.toggle("active");
+  //GROSSIR LA DIV DE LA PLANETE
+  containerPlanet.classList.toggle("active");
+  //TRANSLATE GALAXY
+  galaxy.classList.toggle("active");
+  //SI WORLDBARD ACTIVE...
+  worldbarActive(element, ELEMENTS, active, containerPlanet);
+}
+
 export function worldbarCreate(element, ELEMENTS, containerPlanet) {
   //AU CLIC SUR LA PLANETE DEPLOIEMENT DE LA WORLDBAR, AGRANDISSEMENT DE LA PLANETE...
   containerPlanet.addEventListener("click", () => {
-    //DEPLOYER LA WORLDBAR
-    const active = worldBar.classList.toggle("active");
-    //GROSSIR LA DIV DE LA PLANETE
-    containerPlanet.classList.toggle("active");
-    //TRANSLATE GALAXY
-    galaxy.classList.toggle("active");
-    //SI WORLDBARD ACTIVE...
-    worldbarActive(element, ELEMENTS, active, containerPlanet);
+    toggleActive(element, ELEMENTS, containerPlanet);
   });
 }
 
@@ -48,12 +52,18 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
       worldBar
     );
 
+    //AU CLIC SUR RETOUR, WORLDBAR SE RANGE
+    const returnToGalaxy = document.querySelector(".return-to-galaxy");
+    returnToGalaxy.addEventListener("click", () => {
+      toggleActive(element, ELEMENTS, containerPlanet);
+    });
+
     if (element.id == "intro-planet") {
       textIntroPlanet();
     }
 
     //SINON, SUPPRESSION DE LA DIV ET DES IMAGES DE WORLDBAR
-  } else {
+  } else if (!active) {
     const images = worldBar.querySelectorAll("img");
     images.forEach((image) => {
       image.remove();
@@ -65,12 +75,13 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
 
 function displayWorldbar(element, containerPlanet) {
   //CREATION D'UN DIV POUR ACCUEILLIR LES IMAGES DU MONDE CORRESPONDANT (BACKGROUND + PARCHEMIN)
-  const [parchmentWorld, containerImages] = createElementsWorldBar(element);
+  const [parchmentWorld, containerImages, returnToGalaxy] =
+    createElementsWorldBar(element);
 
   //CENTRER LA PLANETE LORS DE L'AFFICHAGE DE LA WORLDBAR
   centerPlanetWorldbar(containerPlanet);
 
-  return [parchmentWorld, containerImages];
+  return [parchmentWorld, containerImages, returnToGalaxy];
 }
 
 function createElementsWorldBar(element) {
@@ -101,7 +112,13 @@ function createElementsWorldBar(element) {
   parchmentWorld.style.setProperty("--right-position", element.rightPosition);
   parchmentWorld.style.setProperty("--top-position", element.topPosition);
 
-  return [parchmentWorld, containerImages];
+  //CREATION BOUTON RETOUR SUR GALAXY
+  const returnToGalaxy = document.createElement("p");
+  containerBackground.appendChild(returnToGalaxy);
+  returnToGalaxy.classList.add("return-to-galaxy");
+  returnToGalaxy.innerHTML = "X";
+
+  return [parchmentWorld, containerImages, returnToGalaxy];
 }
 
 function centerPlanetWorldbar(containerPlanet) {

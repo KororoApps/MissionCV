@@ -30,6 +30,8 @@ body {
 
 .container-planet {
   position: absolute;
+  top: var(--top);
+  left: var(--left);
 }
 
 #intro-planet {
@@ -109,5 +111,26 @@ body {
     top: 10%;
     left: 22%;
     font-size: 0.7em;
+  }
+}
+
+/*SMARTPHONE*/
+@media (orientation: portrait) and (max-width: 640px) {
+  body {
+    overflow-y: auto;
+  }
+
+  #galaxy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: initial;
+  }
+  .container-planet {
+    position: absolute;
+    top: var(--portrait-top);
+    left: var(--portrait-left);
   }
 }

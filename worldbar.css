@@ -13,3 +13,55 @@
 #world-bar.active {
   transform: initial;
 }
+
+@media (max-height: 800px) and (max-width: 1385px) {
+  #world-bar {
+    width: 40vw;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1170px) {
+  #world-bar {
+    width: 45vw;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1110px) {
+  #world-bar {
+    width: 55vw;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 900px) {
+  #world-bar {
+    width: 65vw;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 800px) {
+  #world-bar {
+    width: 70vw;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 690px) {
+  #world-bar {
+    width: 100vw;
+  }
+}
+
+@media (max-height: 600px) and (max-width: 1600px) {
+  #world-bar {
+    width: 80vw;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+}
+
+/*SMARTPHONE*/
+@media (orientation: portrait) and (max-width: 500px) {
+  #world-bar {
+    width: 100vw;
+    height: 100vh;
+  }
+}

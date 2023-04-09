@@ -34,12 +34,32 @@
   #speak-story-three {
     width: 70%;
   }
+
+  .speak-intro-planet {
+    width: 55%;
+    left: 32%;
+    top: initial;
+    font-size: 1.1em;
+    bottom: 0.1%;
+    margin: 1%;
+  }
+}
+
+@media (max-height: 455px) and (max-width: 1600px) {
+  .speak-intro-planet {
+    font-size: 1em;
+    padding: 10px;
+  }
 }
 
 @media (max-height: 390px) and (max-width: 1600px) {
   .speak {
     width: 49%;
     font-size: 1.1em;
+  }
+
+  .speak-intro-planet {
+    font-size: 0.9em;
   }
 }
 
@@ -63,6 +83,9 @@
   #speak-story-three {
     width: 50%;
   }
+  .speak-intro-planet {
+    font-size: 0.75em;
+  }
 }
 
 @media (max-height: 245px) and (max-width: 1600px) {
@@ -80,6 +103,10 @@
     width: 55%;
     bottom: 21%;
   }
+  .speak-intro-planet {
+    font-size: 0.75em;
+    padding: 3px;
+  }
 }
 
 @media (max-height: 190px) and (max-width: 1600px) {
@@ -91,6 +118,11 @@
   #speak-story-two {
     width: 68%;
   }
+  .speak-intro-planet {
+    font-size: 0.6em;
+    padding: 3px;
+    bottom: 0;
+  }
 }
 
 @media (max-height: 800px) and (max-width: 690px) {
@@ -101,8 +133,9 @@
 
 @media (max-height: 800px) and (max-width: 630px) {
   .speak {
-    left: 40%;
-    bottom: 20%;
+    left: initial;
+    right: 3%;
+    bottom: 25%;
     width: 45%;
   }
   #speak-story-three,
@@ -112,7 +145,7 @@
 }
 
 /*SMARTPHONE*/
-@media (orientation: portrait) and (max-width: 499px) {
+@media (orientation: portrait) and (max-width: 500px) {
   .speak {
     font-size: 0.9em;
     border: 2px solid rgb(74, 12, 85);
@@ -129,5 +162,13 @@
   #speak-story-three {
     left: 40%;
     width: 55%;
+  }
+
+  .speak-intro-planet {
+    font-size: 1.1em;
+    padding: 2px;
+    bottom: 8px;
+    left: initial;
+    right: 0.2px;
   }
 }

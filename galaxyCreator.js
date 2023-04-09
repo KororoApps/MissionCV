@@ -23,8 +23,11 @@ function createPlanet(element) {
   containerPlanet.classList.add("container-planet");
   containerPlanet.id = element.id;
   //POSITIONNEMENT DE CHAQUE DIV
-  containerPlanet.style.top = element.top;
-  containerPlanet.style.left = element.left;
+  containerPlanet.style.setProperty("--top", element.top);
+  containerPlanet.style.setProperty("--left", element.left);
+  //POSITIONNEMENT DE CHAQUE DIV EN MODE SMARTPHONE
+  containerPlanet.style.setProperty("--portrait-top", element.portraitTop);
+  containerPlanet.style.setProperty("--portrait-left", element.portraitLeft);
   return containerPlanet;
 }
 
@@ -39,6 +42,14 @@ function createTarget(element, containerPlanet) {
   containerPlanet.style.setProperty(
     "--target-translate-y",
     element.translateTargetY
+  );
+  containerPlanet.style.setProperty(
+    "--target-portrait-translate-x",
+    element.portraitTranslateTargetX
+  );
+  containerPlanet.style.setProperty(
+    "--target-portrait-translate-y",
+    element.portraitTranslateTargetY
   );
 }
 

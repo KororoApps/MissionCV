@@ -77,17 +77,6 @@ function readyToContinue() {
 
     worldbarActive(ELEMENTS[0], ELEMENTS, active, introPlanet);
     textIntroPlanet();
-
-    // worldbarCreate(ELEMENTS[0], ELEMENTS, introPlanet);
-    // const clickImage = document.querySelector(".click");
-    // clickImage.style.visibility = "hidden";
-    // blinkParchment.style.animation = "initial";
-    // const firstPiece = document.createElement("div");
-    // blinkParchment.appendChild(firstPiece);
-    // firstPiece.classList.add("first-piece");
-    // firstPiece.innerHTML = `Bravo ! Vous avez récupéré un premier morceau ! <br>
-    //   Allez sur la planète Terre pour le voir de plus près !`;
-    // modalClose.style.animationPlayState = "running";
   });
 }
 
@@ -98,7 +87,7 @@ export function textIntroPlanet() {
   containerIntroPlanet.appendChild(speakIntroPlanet);
   speakIntroPlanet.classList.add("speak-intro-planet");
   speakIntroPlanet.innerHTML = `Merci ! Déjà ${counter} morceau de trouvé ! <br> 
-  Faites un tour dans la galaxie et n'hésitez pas <br> à visiter chaque planète que vous verrez. <br> 
+  Faites un tour dans la galaxie et n'hésitez pas à visiter chaque planète que vous verrez. <br> 
   Je crois qu'il reste ${
     ELEMENTS.length - counter
   } morceaux de mon CV à trouver...`;
