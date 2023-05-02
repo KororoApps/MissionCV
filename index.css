@@ -36,7 +36,6 @@ body {
 
 #intro-planet {
   animation: blinkIntroPlanet 0.8s infinite;
-  border: transparent solid 4px;
 }
 
 @keyframes blinkIntroPlanet {

@@ -58,6 +58,22 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
       toggleActive(element, ELEMENTS, containerPlanet);
     });
 
+    //AU CLIC SUR BACKDROP, WORLDBAR SE RANGE
+    const body = document.querySelector("body");
+    const backdrop = document.createElement("div");
+    body.appendChild(backdrop);
+    backdrop.classList.add(".backdrop");
+    backdrop.id = "backdrop";
+    console.log(backdrop);
+    backdrop.style.height = "100%";
+    backdrop.style.width = "100%";
+    backdrop.style.top = "0";
+    backdrop.style.position = "absolute";
+    worldBar.style.zIndex = "3";
+    backdrop.addEventListener("click", () => {
+      toggleActive(element, ELEMENTS, containerPlanet);
+    });
+
     if (element.id == "intro-planet") {
       textIntroPlanet();
     }
@@ -70,11 +86,12 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     });
     const containerImage = worldBar.querySelector("div");
     containerImage.remove();
+    backdrop.remove();
   }
 }
 
 function displayWorldbar(element, containerPlanet) {
-  //CREATION D'UN DIV POUR ACCUEILLIR LES IMAGES DU MONDE CORRESPONDANT (BACKGROUND + PARCHEMIN)
+  //CREATION D'UNE DIV POUR ACCUEILLIR LES IMAGES DU MONDE CORRESPONDANT (BACKGROUND + PARCHEMIN)
   const [parchmentWorld, containerImages, returnToGalaxy] =
     createElementsWorldBar(element);
 

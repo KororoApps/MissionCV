@@ -6,6 +6,7 @@
   margin-top: 3%;
   padding: 10px 15px;
   background-color: rgb(208, 205, 193);
+  background-image: url("./Cv_Galaxy/piece_of_cv/texture.jpg");
 }
 
 .piece-of-cv h1 {
@@ -16,7 +17,7 @@
 
 .piece-of-cv h2 {
   background-color: rgb(78, 76, 71);
-  color: rgb(208, 205, 193);
+  color: rgb(194, 189, 166);
   padding: 3px;
   margin: 40px 0px 30px 0px;
   font-size: 1.3em;
