@@ -52,17 +52,30 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
       worldBar
     );
 
+    const body = document.querySelector("body");
+
+    //CREATION D'UNE AIDE
+    const heldEchap = document.getElementById("help-echap");
+    heldEchap.style.visibility = "initial";
+    heldEchap.textContent =
+      "Cliquez n'importe où dans l'univers ou sur la croix en haut à droite pour continuer l'aventure :)";
+
+    const helpPlanet = document.getElementById("help-planet");
+    helpPlanet.style.visibility = "hidden";
+
     //AU CLIC SUR RETOUR, WORLDBAR SE RANGE
     const returnToGalaxy = document.querySelector(".return-to-galaxy");
     returnToGalaxy.addEventListener("click", () => {
       toggleActive(element, ELEMENTS, containerPlanet);
+      heldEchap.style.visibility = "hidden";
+      helpPlanet.style.visibility = "initial";
+      helpPlanet.textContent = "Cliquez sur une planète pour la visiter";
     });
 
     //AU CLIC SUR BACKDROP, WORLDBAR SE RANGE
-    const body = document.querySelector("body");
     const backdrop = document.createElement("div");
     body.appendChild(backdrop);
-    backdrop.classList.add(".backdrop");
+    backdrop.classList.add("backdrop");
     backdrop.id = "backdrop";
     console.log(backdrop);
     backdrop.style.height = "100%";
@@ -72,6 +85,9 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     worldBar.style.zIndex = "3";
     backdrop.addEventListener("click", () => {
       toggleActive(element, ELEMENTS, containerPlanet);
+      heldEchap.style.visibility = "hidden";
+      helpPlanet.style.visibility = "initial";
+      helpPlanet.textContent = "Cliquez sur une planète pour la visiter ;)";
     });
 
     if (element.id == "intro-planet") {

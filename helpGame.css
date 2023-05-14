@@ -1,0 +1,24 @@
+.help {
+  position: absolute;
+  width: 150px;
+  color: rgba(240, 248, 255, 0.553);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 5px solid rgb(74, 12, 85);
+  background-color: rgba(109, 20, 94, 0.47);
+  padding: 20px;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+#help-echap {
+  bottom: 25px;
+  left: 50%;
+}
+
+#help-planet {
+  top: 10%;
+  left: 15%;
+  transition: ease;
+}
