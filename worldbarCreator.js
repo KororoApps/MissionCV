@@ -37,15 +37,14 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     //CREATION DE LA DIV ACCUEILLANT L'EXTRAIT DE CV
     const pieceOfCV = document.createElement("div");
     //CREATION DU BOUTTON POUR RECUPERER LE MORCEAU DE CV
-    const buttonRetrieve = document.createElement("button");
+    //const buttonRetrieve = document.createElement("button");
 
-    cvRetrieve(element, containerImages, pieceOfCV, buttonRetrieve, ELEMENTS);
+    cvRetrieve(element, containerImages, pieceOfCV, ELEMENTS);
 
     displayPieceOfCv(
       parchmentWorld,
       containerImages,
       pieceOfCV,
-      buttonRetrieve,
       element,
       ELEMENTS,
       containerPlanet,
@@ -54,12 +53,7 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
 
     const body = document.querySelector("body");
 
-    //CREATION D'UNE AIDE
-    const heldEchap = document.getElementById("help-echap");
-    heldEchap.style.visibility = "initial";
-    heldEchap.textContent =
-      "Cliquez n'importe où dans l'univers ou sur la croix en haut à droite pour continuer l'aventure :)";
-
+    const helpEchap = document.getElementById("help-echap");
     const helpPlanet = document.getElementById("help-planet");
     helpPlanet.style.visibility = "hidden";
 
@@ -67,7 +61,7 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     const returnToGalaxy = document.querySelector(".return-to-galaxy");
     returnToGalaxy.addEventListener("click", () => {
       toggleActive(element, ELEMENTS, containerPlanet);
-      heldEchap.style.visibility = "hidden";
+      helpEchap.style.visibility = "hidden";
       helpPlanet.style.visibility = "initial";
       helpPlanet.textContent = "Cliquez sur une planète pour la visiter";
     });
@@ -85,7 +79,7 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     worldBar.style.zIndex = "3";
     backdrop.addEventListener("click", () => {
       toggleActive(element, ELEMENTS, containerPlanet);
-      heldEchap.style.visibility = "hidden";
+      helpEchap.style.visibility = "hidden";
       helpPlanet.style.visibility = "initial";
       helpPlanet.textContent = "Cliquez sur une planète pour la visiter ;)";
     });
@@ -122,6 +116,13 @@ function createElementsWorldBar(element) {
   const containerImages = document.createElement("div");
   worldBar.appendChild(containerImages);
   containerImages.classList.add("container-images");
+
+  //GUIDE DE JEU
+  const helpParchment = document.createElement("div");
+  containerImages.appendChild(helpParchment);
+  helpParchment.classList.add("help");
+  helpParchment.id = "help-parchment";
+  helpParchment.textContent = "Mais où est mon morceau de CV...?";
 
   //CREATION D'UN DIV POUR AFFICHER LE BACKGROUND
   const containerBackground = document.createElement("div");

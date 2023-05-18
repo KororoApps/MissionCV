@@ -1,8 +1,8 @@
 export function cvRetrieve(
   element,
   containerImages,
-  pieceOfCV,
-  buttonRetrieve
+  pieceOfCV
+  // buttonRetrieve
 ) {
   //SI cvRETRIEVE FALSE
   if (!element.cvRetrieve) {
@@ -12,10 +12,10 @@ export function cvRetrieve(
   containerImages.appendChild(pieceOfCV);
   pieceOfCV.classList.add("piece-of-cv");
   pieceOfCV.innerHTML = element.pieceOfCV;
-  pieceOfCV.appendChild(buttonRetrieve);
-  buttonRetrieve.classList.add("button-retrieve");
-  buttonRetrieve.innerHTML = "Récupéré !";
-  buttonRetrieve.style.backgroundColor = "green";
+  // pieceOfCV.appendChild(buttonRetrieve);
+  // buttonRetrieve.classList.add("button-retrieve");
+  // buttonRetrieve.innerHTML = "Récupéré !";
+  // buttonRetrieve.style.backgroundColor = "green";
 }
 
 //SI TOUS LES CV SONT RECUPERES...

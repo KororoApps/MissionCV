@@ -4,7 +4,6 @@ export function displayPieceOfCv(
   parchmentWorld,
   containerImages,
   pieceOfCV,
-  buttonRetrieve,
   element,
   ELEMENTS,
   containerPlanet,
@@ -25,22 +24,27 @@ export function displayPieceOfCv(
       pieceOfCV.classList.add("piece-of-cv");
       pieceOfCV.innerHTML = element.pieceOfCV;
 
-      pieceOfCV.appendChild(buttonRetrieve);
-      buttonRetrieve.classList.add("button-retrieve");
+      // pieceOfCV.appendChild(buttonRetrieve);
+
       pieceOfCvExist = true;
+
       //VALIDER LORSQUE LE MORCEAU DE CV EST RECUPERE
+      element.cvRetrieve = true;
+      allCvRetrieve(ELEMENTS, containerPlanet, worldbar);
 
-      if (!element.cvRetrieve) {
-        buttonRetrieve.innerHTML = "Récupérer";
-        buttonRetrieve.addEventListener("click", () => {
-          element.cvRetrieve = true;
-          //CHANGEMENT BOUTTON QUAND CV RECUPERE
-          buttonRetrieve.innerHTML = "Récupéré !";
-          buttonRetrieve.style.backgroundColor = "green";
+      //ANCIEN BOUTON RECUPERE !
+      // parchmentWorld.classList.add("button-retrieve");
+      // if (!element.cvRetrieve) {
+      //   buttonRetrieve.innerHTML = "Récupérer";
+      //   buttonRetrieve.addEventListener("click", () => {
+      //     element.cvRetrieve = true;
+      //     //CHANGEMENT BOUTTON QUAND CV RECUPERE
+      //     buttonRetrieve.innerHTML = "Récupéré !";
+      //     buttonRetrieve.style.backgroundColor = "green";
 
-          allCvRetrieve(ELEMENTS, containerPlanet, worldbar);
-        });
-      }
+      //     allCvRetrieve(ELEMENTS, containerPlanet, worldbar);
+      //   });
+      // }
     }
   });
 }

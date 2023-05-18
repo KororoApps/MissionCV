@@ -73,6 +73,11 @@ function readyToContinue() {
     introPlanet.classList.toggle("active");
     //TRANSLATE GALAXY
     galaxy.classList.toggle("active");
+    //CREATION D'UNE AIDE
+    const helpEchap = document.getElementById("help-echap");
+    helpEchap.style.visibility = "initial";
+    helpEchap.textContent =
+      "Cliquez n'importe où dans l'univers ou sur la croix en haut à droite pour continuer l'aventure :)";
     //SI WORLDBARD ACTIVE...
 
     worldbarActive(ELEMENTS[0], ELEMENTS, active, introPlanet);

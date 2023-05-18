@@ -8,17 +8,27 @@
   border: 5px solid rgb(74, 12, 85);
   background-color: rgba(109, 20, 94, 0.47);
   padding: 20px;
-  border-radius: 5px;
-  visibility: hidden;
+  border-radius: 50px;
+  text-align: center;
 }
 
 #help-echap {
   bottom: 25px;
   left: 50%;
+
+  visibility: hidden;
 }
 
 #help-planet {
   top: 10%;
   left: 15%;
   transition: ease;
+
+  visibility: hidden;
+}
+
+#help-parchment {
+  bottom: 35%;
+  left: 35%;
+  z-index: 0;
 }
