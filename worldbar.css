@@ -14,6 +14,24 @@
   transform: initial;
 }
 
+@media (max-height: 1000px) and (max-width: 1910px) {
+  #world-bar {
+    width: 40vw;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1720px) {
+  #world-bar {
+    width: 45vw;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1550px) {
+  #world-bar {
+    width: 50vw;
+  }
+}
+
 @media (max-height: 800px) and (max-width: 1385px) {
   #world-bar {
     width: 40vw;

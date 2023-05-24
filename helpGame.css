@@ -15,7 +15,6 @@
 #help-echap {
   bottom: 25px;
   left: 50%;
-
   visibility: hidden;
 }
 
@@ -23,7 +22,6 @@
   top: 10%;
   left: 15%;
   transition: ease;
-
   visibility: hidden;
 }
 
@@ -31,4 +29,96 @@
   bottom: 35%;
   left: 35%;
   z-index: 0;
+}
+
+@media (max-height: 1000px) and (max-width: 1885px) {
+  #help-echap {
+    left: 45%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1716px) {
+  #help-echap {
+    left: 40%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1550px) {
+  #help-echap {
+    left: 35%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1325px) {
+  #help-echap {
+    left: 30%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1500px) {
+  #help-echap {
+    left: 45%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1345px) {
+  #help-echap {
+    left: 40%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1165px) {
+  #help-echap {
+    left: 35%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1110px) {
+  #help-echap {
+    left: 25%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1080px) {
+  #help-echap {
+    left: 40%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 1080px) {
+  #help-echap {
+    left: 20%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 895px) {
+  #help-echap {
+    left: 10%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 850px) {
+  #help-echap {
+    left: 35%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 845px) {
+  #help-echap {
+    left: 70%;
+    z-index: 3;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 675px) {
+  #help-echap {
+    left: 25%;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 500px) {
+  #help-echap {
+    left: 50%;
+    z-index: 3;
+  }
 }
