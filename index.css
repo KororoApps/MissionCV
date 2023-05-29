@@ -34,10 +34,6 @@ body {
   left: var(--left);
 }
 
-#intro-planet {
-  animation: blinkIntroPlanet 0.8s infinite;
-}
-
 @keyframes blinkIntroPlanet {
   0% {
   }

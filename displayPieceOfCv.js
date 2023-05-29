@@ -1,3 +1,4 @@
+import { displayParchment } from "./displayPiecesOfParchment.js";
 import { allCvRetrieve } from "./retrievePieceOfCv.js";
 
 export function displayPieceOfCv(
@@ -27,6 +28,8 @@ export function displayPieceOfCv(
       // pieceOfCV.appendChild(buttonRetrieve);
 
       pieceOfCvExist = true;
+
+      displayParchment(element);
 
       //VALIDER LORSQUE LE MORCEAU DE CV EST RECUPERE
       element.cvRetrieve = true;

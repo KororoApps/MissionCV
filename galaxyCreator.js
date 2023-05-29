@@ -14,6 +14,8 @@ export const createGalaxy = () => {
     //AU CLIC SUR LA PLANETE DEPLOIEMENT DE LA WORLDBAR, AGRANDISSEMENT DE LA PLANETE...
     worldbarCreate(element, ELEMENTS, containerPlanet);
   });
+  //AFFICHAGE CV COMPLET
+  cvComplet();
 };
 
 function createPlanet(element) {
@@ -61,4 +63,28 @@ function imagePlanet(element, containerPlanet) {
   createPlanet.style.height = element.height;
   createPlanet.src = element.planetSrc;
   createPlanet.alt = element.planetAlt;
+}
+
+function cvComplet() {
+  const body = document.querySelector("body");
+  const piecesOfParchment = document.createElement("div");
+  body.appendChild(piecesOfParchment);
+  piecesOfParchment.classList.add("pieces-of-parchment-retrieve");
+  piecesOfParchment.style.position = "absolute";
+  piecesOfParchment.style.height = "100px";
+  piecesOfParchment.style.position = "absolute";
+  piecesOfParchment.style.width = "100px";
+  piecesOfParchment.style.top = "0px";
+  piecesOfParchment.style.left = "0.5%";
+
+  console.log(piecesOfParchment);
+  const completParchment = document.createElement("img");
+  piecesOfParchment.appendChild(completParchment);
+  completParchment.src = "./Cv_Galaxy/piece_of_cv/cv-complet.png";
+  completParchment.classList.add("cv-complet");
+  completParchment.style.height = "200px";
+  completParchment.style.opacity = "0.2";
+  completParchment.style.position = "absolute";
+  completParchment.style.top = "0px";
+  completParchment.style.border = "2px solid rgb(74, 12, 85)";
 }

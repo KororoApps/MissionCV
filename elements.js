@@ -25,6 +25,7 @@ export const ELEMENTS = [
       <p><span>Mail</span>: <a href="mailto:elodie.sponton@yahoo.fr">elodie.sponton@yahoo.fr</a></p>
       <p><span>Adresse</span> : DIJON</p>`,
     cvRetrieve: true,
+    pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-introTerre.png",
   },
   {
     id: "mando-planet",
@@ -55,6 +56,7 @@ export const ELEMENTS = [
       <h3>Apprentissage de HTML, CSS, PHP, SQL, GIT</h3>
       <p>Etude avec OpenClassRooms</p>`,
     cvRetrieve: false,
+    pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-formationsAutodidactes.png",
   },
   {
     id: "mononoke-planet",
@@ -83,6 +85,7 @@ export const ELEMENTS = [
       <h3>Master 2, Espace Rural et Environnement</h3>
       <p>2011-2012 / Université de Bourgogne, Dijon</p>`,
     cvRetrieve: false,
+    pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-formations.png",
   },
   {
     id: "porco-planet",
@@ -114,6 +117,8 @@ export const ELEMENTS = [
       <p><span>Septembre 2014 - Mars 2016 / Schneider Electric, Dijon</span></p>
       <p>Unification du système de management de deux usines.</p>`,
     cvRetrieve: false,
+    pieceOfParchment:
+      "./Cv_Galaxy/piece_of_cv/cv-experiencesProfessionnelles.png",
   },
   {
     id: "catsby-planet",
@@ -144,6 +149,7 @@ export const ELEMENTS = [
       <h3>- Participation à l'Inktober depuis 2016</h3>
       <p>Publication de 31 dessins tout le long du mois d'octobre</p>`,
     cvRetrieve: false,
+    pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-interetsLoisirs.png",
   },
   {
     id: "simpson-planet",
@@ -172,6 +178,7 @@ export const ELEMENTS = [
       <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>
       <p>En cours</p>`,
     cvRetrieve: false,
+    pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-projetsPersonnels.png",
   },
   {
     id: "ange-planet",
@@ -199,5 +206,6 @@ export const ELEMENTS = [
       <br>
       <p>Je suis confiante dans ma capacité à progresser.</p>`,
     cvRetrieve: false,
+    pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-profilPersonnel.png",
   },
 ];

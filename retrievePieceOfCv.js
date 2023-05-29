@@ -1,3 +1,5 @@
+import { displayParchment } from "./displayPiecesOfParchment.js";
+
 export function cvRetrieve(
   element,
   containerImages,
@@ -12,6 +14,9 @@ export function cvRetrieve(
   containerImages.appendChild(pieceOfCV);
   pieceOfCV.classList.add("piece-of-cv");
   pieceOfCV.innerHTML = element.pieceOfCV;
+
+  displayParchment(element);
+
   // pieceOfCV.appendChild(buttonRetrieve);
   // buttonRetrieve.classList.add("button-retrieve");
   // buttonRetrieve.innerHTML = "Récupéré !";
