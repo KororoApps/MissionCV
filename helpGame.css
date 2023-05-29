@@ -128,7 +128,8 @@
 
   #help-parchment {
     left: initial;
-    right: 15%;
+    right: 12%;
+    width: 20%;
   }
 
   #help-planet {
