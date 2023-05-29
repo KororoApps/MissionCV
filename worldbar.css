@@ -32,6 +32,12 @@
   }
 }
 
+@media (max-height: 1000px) and (max-width: 860px) {
+  #world-bar {
+    width: 100vw;
+  }
+}
+
 @media (max-height: 800px) and (max-width: 1385px) {
   #world-bar {
     width: 40vw;
@@ -68,6 +74,8 @@
   }
 }
 
+/*SMARTPHONE*/
+
 @media (max-height: 600px) and (max-width: 1600px) {
   #world-bar {
     width: 80vw;
@@ -76,7 +84,6 @@
   }
 }
 
-/*SMARTPHONE*/
 @media (orientation: portrait) and (max-width: 500px) {
   #world-bar {
     width: 100vw;

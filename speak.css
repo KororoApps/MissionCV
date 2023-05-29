@@ -49,6 +49,33 @@ a {
   }
 }
 
+@media (max-height: 1000px) and (max-width: 1370px) {
+  .speak-intro-planet {
+    font-size: 1.1em;
+    width: 50%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1130px) {
+  .speak-intro-planet {
+    font-size: 1em;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 1030px) {
+  .speak-intro-planet {
+    font-size: 0.9em;
+    width: 50%;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 860px) {
+  .speak-intro-planet {
+    font-size: 1em;
+    width: 58%;
+  }
+}
+
 @media (max-height: 455px) and (max-width: 1600px) {
   .speak-intro-planet {
     font-size: 1em;

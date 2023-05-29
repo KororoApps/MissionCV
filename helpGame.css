@@ -14,7 +14,7 @@
 
 #help-echap {
   bottom: 25px;
-  left: 50%;
+  left: 48%;
   visibility: hidden;
 }
 
@@ -28,12 +28,11 @@
 #help-parchment {
   bottom: 35%;
   left: 35%;
-  z-index: 0;
 }
 
 @media (max-height: 1000px) and (max-width: 1885px) {
   #help-echap {
-    left: 45%;
+    left: 30%;
   }
 }
 
@@ -57,18 +56,6 @@
 
 @media (max-height: 800px) and (max-width: 1500px) {
   #help-echap {
-    left: 45%;
-  }
-}
-
-@media (max-height: 800px) and (max-width: 1345px) {
-  #help-echap {
-    left: 40%;
-  }
-}
-
-@media (max-height: 800px) and (max-width: 1165px) {
-  #help-echap {
     left: 35%;
   }
 }
@@ -81,7 +68,7 @@
 
 @media (max-height: 1000px) and (max-width: 1080px) {
   #help-echap {
-    left: 40%;
+    left: 25%;
   }
 }
 
@@ -97,28 +84,40 @@
   }
 }
 
-@media (max-height: 1000px) and (max-width: 850px) {
-  #help-echap {
-    left: 35%;
-  }
-}
-
 @media (max-height: 800px) and (max-width: 845px) {
   #help-echap {
-    left: 70%;
+    left: initial;
+    right: 5%;
+    bottom: 3%;
+    z-index: 3;
+    font-size: 0.7em;
+    width: 100px;
+  }
+}
+
+@media (max-height: 1000px) and (max-width: 860px) {
+  #help-echap {
+    left: initial;
+    right: 5%;
+    bottom: 3%;
     z-index: 3;
   }
 }
 
-@media (max-height: 1000px) and (max-width: 675px) {
-  #help-echap {
-    left: 25%;
-  }
-}
+/*SMARTPHONE*/
 
-@media (orientation: portrait) and (max-width: 500px) {
+@media (max-height: 600px) and (max-width: 1600px) {
   #help-echap {
-    left: 50%;
+    left: initial;
+    right: 46%;
+    bottom: initial;
+    top: 3%;
+    font-size: 0.7em;
     z-index: 3;
+  }
+
+  #help-parchment {
+    left: initial;
+    right: 15%;
   }
 }
