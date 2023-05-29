@@ -70,6 +70,10 @@
   #help-echap {
     left: 25%;
   }
+
+  #help-planet {
+    left: 10%;
+  }
 }
 
 @media (max-height: 800px) and (max-width: 1080px) {
@@ -102,6 +106,12 @@
     bottom: 3%;
     z-index: 3;
   }
+
+  #help-planet {
+    left: 2%;
+    top: 2%;
+    width: 20%;
+  }
 }
 
 /*SMARTPHONE*/
@@ -119,5 +129,11 @@
   #help-parchment {
     left: initial;
     right: 15%;
+  }
+
+  #help-planet {
+    left: 2%;
+    top: 2%;
+    width: 20%;
   }
 }
