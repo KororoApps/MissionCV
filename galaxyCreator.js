@@ -74,7 +74,7 @@ function cvComplet() {
   piecesOfParchment.style.height = "100px";
   piecesOfParchment.style.position = "absolute";
   piecesOfParchment.style.width = "100px";
-  piecesOfParchment.style.top = "0px";
+  piecesOfParchment.style.top = "1%";
   piecesOfParchment.style.left = "0.5%";
 
   console.log(piecesOfParchment);
