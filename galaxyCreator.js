@@ -82,9 +82,4 @@ function cvComplet() {
   piecesOfParchment.appendChild(completParchment);
   completParchment.src = "./Cv_Galaxy/piece_of_cv/cv-complet.png";
   completParchment.classList.add("cv-complet");
-  completParchment.style.height = "200px";
-  completParchment.style.opacity = "0.2";
-  completParchment.style.position = "absolute";
-  completParchment.style.top = "0px";
-  completParchment.style.border = "2px solid rgb(74, 12, 85)";
 }

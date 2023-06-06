@@ -72,7 +72,9 @@
   }
 
   #help-planet {
-    left: 10%;
+    left: 20%;
+    top: 1%;
+    width: 200px;
   }
 }
 
@@ -108,9 +110,9 @@
   }
 
   #help-planet {
-    left: 2%;
-    top: 2%;
-    width: 20%;
+    left: 1%;
+    top: 40%;
+    width: 100px;
   }
 }
 
@@ -133,8 +135,11 @@
   }
 
   #help-planet {
-    left: 2%;
-    top: 2%;
-    width: 20%;
+    left: 13%;
+    top: 5%;
+    width: 80px;
+    height: 50px;
+    font-size: 0.7em;
+    padding: 10px;
   }
 }

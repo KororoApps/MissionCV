@@ -1,0 +1,18 @@
+.piece-of-parchment-retrieve,
+.cv-complet {
+  height: 200px;
+  top: 0px;
+  border: 2px solid rgb(74, 12, 85);
+  position: absolute;
+}
+
+.cv-complet {
+  opacity: 0.2;
+}
+
+@media (max-height: 600px) and (max-width: 1600px) {
+  .piece-of-parchment-retrieve,
+  .cv-complet {
+    height: 100px;
+  }
+}
