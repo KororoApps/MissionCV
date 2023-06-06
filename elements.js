@@ -9,7 +9,7 @@ export const ELEMENTS = [
     planetAlt: "Planète Terre",
     height: "22vh",
     top: "40%",
-    left: "2%",
+    left: "10%",
     portraitTop: "10px",
     portraitLeft: "30%",
     targetWidth: "33vh",
