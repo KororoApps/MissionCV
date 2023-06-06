@@ -21,5 +21,22 @@ export function parallax() {
         )`;
 
     backParallax.style.transform = `translate(${x / sBack}px, ${y / sBack}px)`;
+
+    window.addEventListener("deviceorientation", (e) => {
+      const frontToBack = e.beta;
+      const leftToRight = e.gamma;
+
+      frontParallax.style.transform = `translate(
+
+        calc(${frontToBack / sFront}px + var(--translate-x)), 
+        
+        calc(${leftToRight / sFront}px + var(--translate-y))
+
+        )`;
+
+      backParallax.style.transform = `translate(${frontToBack / sBack}px, ${
+        leftToRight / sBack
+      }px)`;
+    });
   });
 }
