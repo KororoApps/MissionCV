@@ -143,3 +143,22 @@
     padding: 10px;
   }
 }
+
+@media (max-height: 1000px) and (max-width: 500px) {
+  #help-planet {
+    width: 70px;
+    top: 1%;
+    left: initial;
+    right: 2%;
+  }
+
+  #help-echap {
+    left: 0%;
+    bottom: 0%;
+    font-size: 0.7em;
+    width: 97%;
+    z-index: 3;
+    padding: 0%;
+    border-radius: initial;
+  }
+}
