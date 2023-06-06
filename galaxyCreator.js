@@ -23,6 +23,7 @@ function createPlanet(element) {
   const containerPlanet = document.createElement("div");
   galaxy.appendChild(containerPlanet);
   containerPlanet.classList.add("container-planet");
+
   containerPlanet.id = element.id;
   //POSITIONNEMENT DE CHAQUE DIV
   containerPlanet.style.setProperty("--top", element.top);

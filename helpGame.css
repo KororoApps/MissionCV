@@ -144,7 +144,7 @@
   }
 }
 
-@media (max-height: 1000px) and (max-width: 500px) {
+@media (max-height: 1000px) and (max-width: 640px) {
   #help-planet {
     width: 70px;
     top: 1%;

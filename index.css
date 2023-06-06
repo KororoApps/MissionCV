@@ -1,9 +1,30 @@
 body {
-  overflow: hidden;
-  background: url("./Cv_Galaxy/map/galaxy.jpg") fixed no-repeat top left;
-  background-color: blueviolet;
-  background-size: cover;
   margin: 0;
+  background-color: blueviolet;
+  /* overflow: hidden;
+  position: relative;
+  background: url("./Cv_Galaxy/map/galaxy.jpg") fixed no-repeat top left;
+    background-size: cover;
+  min-height: 100vh; */
+}
+
+.parallax-effect {
+  min-height: 100vh;
+  background-size: cover;
+  position: absolute;
+  overflow: hidden;
+}
+.parallax-back {
+  background-image: url("./Cv_Galaxy/map/galaxy.jpg");
+  background-size: cover;
+  top: -10%;
+  left: -10%;
+  background-position: center;
+  background-attachment: fixed;
+  position: absolute;
+  overflow: hidden;
+  min-height: 120vh;
+  width: 120vw;
 }
 
 #galaxy {
