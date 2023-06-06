@@ -3,16 +3,23 @@ export function parallax() {
   const frontParallax = document.querySelector(".parallax-front");
   const backParallax = document.querySelector(".parallax-back");
 
-  const sFront = 200;
-  const sBack = 400;
+  const sFront = -20;
+  const sBack = -40;
 
   parallax.addEventListener("mousemove", (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
+    const x = e.clientX - window.innerWidth / 2;
 
-    frontParallax.style.transform = `translate(${x / sFront}%, ${y / sFront}%)`;
+    const y = e.clientY - window.innerHeight / 2;
 
-    backParallax.style.transform = `translate(${x / sBack}%, ${y / sBack}%)`;
-    console.log(backParallax);
+    console.log(x, y);
+    frontParallax.style.transform = `translate(
+
+        calc(${x / sFront}px + var(--translate-x)), 
+        
+        calc(${y / sFront}px + var(--translate-y))
+
+        )`;
+
+    backParallax.style.transform = `translate(${x / sBack}px, ${y / sBack}px)`;
   });
 }

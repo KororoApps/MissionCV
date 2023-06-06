@@ -5,13 +5,10 @@ import { parallax } from "./parallaxEffect.js";
 //OUVERTURE INTRO DU CV
 window.addEventListener("load", () => {
   displayStoryModal();
+  parallax();
 });
 
 const closeModal = document.querySelector(".click");
-
-closeModal.addEventListener("click", () => {
-  parallax();
-});
 
 //CREATION GALAXY
 createGalaxy();

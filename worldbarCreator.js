@@ -97,6 +97,9 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     const containerImage = worldBar.querySelector("div");
     containerImage.remove();
     backdrop.remove();
+
+    galaxy.style.setProperty("--translate-x", "0px");
+    galaxy.style.setProperty("--translate-y", "0px");
   }
 }
 
