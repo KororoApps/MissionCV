@@ -15,7 +15,7 @@
   position: absolute;
   color: rgb(250, 241, 252);
   top: 10%;
-  left: 10%;
+  left: 200px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.4em;
   font-weight: 500;
@@ -23,7 +23,7 @@
 
 .download-cv {
   position: absolute;
-  left: 10%;
+  left: 200px;
   right: auto;
   top: 1%;
   bottom: auto;
