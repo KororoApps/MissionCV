@@ -2,7 +2,7 @@
   position: relative;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(48, 48, 60);
-  height: 60vh;
+  min-height: 55vh;
   margin-top: 3%;
   padding: 10px 15px;
   background-color: rgb(208, 205, 193);

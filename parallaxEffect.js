@@ -11,7 +11,7 @@ export function parallax() {
 
     const y = e.clientY - window.innerHeight / 2;
 
-    console.log(x, y);
+    //console.log(x, y);
     frontParallax.style.transform = `translate(
 
         calc(${x / sFront}px + var(--translate-x)), 

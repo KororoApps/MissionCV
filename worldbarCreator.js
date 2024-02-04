@@ -71,7 +71,7 @@ export function worldbarActive(element, ELEMENTS, active, containerPlanet) {
     body.appendChild(backdrop);
     backdrop.classList.add("backdrop");
     backdrop.id = "backdrop";
-    console.log(backdrop);
+    //console.log(backdrop);
     backdrop.style.height = "100%";
     backdrop.style.width = "100%";
     backdrop.style.top = "0";

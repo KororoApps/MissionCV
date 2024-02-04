@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,44 +16,51 @@
     <link rel="stylesheet" href="./cvComplete.css">
     <link rel="stylesheet" href="./helpGame.css">
     <link rel="stylesheet" href="./displayPiecesOfParchment.css">
+
+
 </head>
+
 <body>
-    <!--  Downloads/PROJETS_DEV/MISSION_CV  --> 
+    <!--  Downloads/PROJETS_DEV/MISSION_CV  -->
 
     <section class="parallax-effect">
         <div class="parallax-back"> </div>
         <div id="galaxy" class="parallax-front">
             <!--récup les images avec js avec boucles for-->
-    
+
         </div>
 
 
-    <dialog class="modal">
+        <dialog class="modal">
 
-        <div class="story-container">
-                <img class="story" id="story-background" src="./Cv_Galaxy/story/story_fond.jpg" alt="Fond de l'histoire">
+            <div class="story-container">
+                <img class="story" id="story-background" src="./Cv_Galaxy/story/story_fond.jpg"
+                    alt="Fond de l'histoire">
 
                 <div class="story" id="blink-parchment">
                     <img class="click" src="./Cv_Galaxy/story/story_05.png" alt="">
-                </div> 
+                </div>
+            </div>
+
+            <button class="button-next">Suivant</button>
+
+            <!--<button class="modal-close">Prêt ?</button>  -->
+        </dialog>
+
+
+
+        <div id="world-bar">
+
         </div>
 
-        <button class="button-next">Suivant</button>
+        <div class="help" id="help-echap"></div>
+        <div class="help" id="help-planet"></div>
 
-      <!--<button class="modal-close">Prêt ?</button>  --> 
-    </dialog>
-    
+    </section>
 
-
-    <div id="world-bar">
-
-    </div>
-
-    <div class="help" id="help-echap"></div>
-    <div class="help" id="help-planet"></div>
-
-</section>
 
     <script src="./index.js" type="module"></script>
+
 </body>
+
 </html>

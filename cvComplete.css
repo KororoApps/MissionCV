@@ -14,16 +14,19 @@
 .txt-cv-complete {
   position: absolute;
   color: rgb(250, 241, 252);
-  top: 40%;
-  left: 25%;
+  top: 10%;
+  left: 10%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.4em;
   font-weight: 500;
 }
 
 .download-cv {
-  right: 70%;
-  bottom: 3%;
+  position: absolute;
+  left: 10%;
+  right: auto;
+  top: 1%;
+  bottom: auto;
 }
 
 @media (orientation: landscape) and (max-device-width: 800px) {

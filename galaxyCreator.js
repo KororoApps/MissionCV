@@ -78,7 +78,7 @@ function cvComplet() {
   piecesOfParchment.style.top = "1%";
   piecesOfParchment.style.left = "0.5%";
 
-  console.log(piecesOfParchment);
+  //console.log(piecesOfParchment);
   const completParchment = document.createElement("img");
   piecesOfParchment.appendChild(completParchment);
   completParchment.src = "./Cv_Galaxy/piece_of_cv/cv-complet.png";

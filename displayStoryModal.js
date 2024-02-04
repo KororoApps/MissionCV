@@ -12,8 +12,8 @@ let clickCounter = 0;
 export function displayStoryModal() {
   //OUVERTURE DE LA MODAL
   modal.showModal();
-  console.log(innerHeight);
-  console.log(innerWidth);
+  //console.log(innerHeight);
+  //console.log(innerWidth);
   //CREATION DE LA DIV STORY ACCUEILLANT UNE IMAGE ET UN TEXTE
   const imageStory = createStory();
   //AFFICHAGE DE LA 1er IMAGE

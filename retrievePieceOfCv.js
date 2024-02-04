@@ -26,7 +26,7 @@ export function cvRetrieve(
 //SI TOUS LES CV SONT RECUPERES...
 export function allCvRetrieve(ELEMENTS, containerPlanet, worldBar) {
   if (ELEMENTS.every((element) => element.cvRetrieve)) {
-    const containerImages = document.querySelector(".container-images");
+    /*const containerImages = document.querySelector(".container-images");
     worldBar.classList.remove("active");
     containerImages.remove();
     containerPlanet.classList.remove("active");
@@ -61,6 +61,25 @@ export function allCvRetrieve(ELEMENTS, containerPlanet, worldBar) {
     galaxy.addEventListener("click", () => {
       cvComplete.close();
       txtCvComplete.remove();
-    });
+    });*/
+    //BOUTON DE TELECHARGEMENT DE MON CV COMPLET
+    const downloadCvComplete = document.createElement("a");
+    const body = document.querySelector("body");
+    body.appendChild(downloadCvComplete);
+    downloadCvComplete.classList.add("download-cv");
+    downloadCvComplete.innerHTML = "Télécharger le CV complet !";
+    downloadCvComplete.href = "./Cv_Galaxy/cvComplete.pdf";
+    downloadCvComplete.download = "CV-Elodie SPONTON.pdf";
+    //POP-UP CV RETROUVE !
+    const txtCvComplete = document.createElement("div");
+    body.appendChild(txtCvComplete);
+    txtCvComplete.classList.add("txt-cv-complete");
+    txtCvComplete.innerHTML = `Merci ! Vous avez retrouver mon CV au complet ! <br> 
+                                Vous pouvez me contacter pour me le rendre <br> si vous le souhaitez :)`;
+    //SUPPRIMER POP-UP AIDE
+    const helpPopUp = document.getElementById("help-planet");
+    helpPopUp.classList.remove("help");
+
+
   }
 }

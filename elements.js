@@ -19,7 +19,7 @@ export const ELEMENTS = [
     rightPosition: "10%",
     topPosition: "50%",
     pieceOfCV: `<h1>ELODIE SPONTON</h1> 
-      <h4>DEVELOPPEUSE WEB</h4>
+      <h4>DEVELOPPEUSE</h4>
       <h2>COORDONNEES</h2>
       <p><span>Tél</span> : N'hésitez pas à me le demander :)</p>
       <p><span>Mail</span>: <a href="mailto:elodie.sponton@yahoo.fr">elodie.sponton@yahoo.fr</a></p>
@@ -50,7 +50,7 @@ export const ELEMENTS = [
       <h3>Apprentissage de l'algorithmique et Java</h3>
       <p>Etude avec le livre "Algorithmique - Des bases à la POO en Java"</p>
       <h3>Apprentissage de Javascript</h3>
-      <p>Etude avec la formation en ligne Javascript de A à Z, de Fromscratch.podia.com</p>
+      <p>Etude avec la formation en ligne "Javascript de A à Z", de Fromscratch.podia.com</p>
       <h3>Apprentissage de Symfony</h3>
       <p>Etude avec la formation en ligne We Develop Me, de Lior Chamla</p>
       <h3>Apprentissage de HTML, CSS, PHP, SQL, GIT</h3>
@@ -78,6 +78,8 @@ export const ELEMENTS = [
     rightPosition: "50%",
     topPosition: "50%",
     pieceOfCV: `<h2>FORMATIONS</h2> 
+      <h3>BAC+3, titre RNCP, Administrateur des Systèmes d'Information</h3>
+      <p>2023-2024 / DIIAGE, Parcours Dev Full Stack, Dijon</p>
       <h3>Titre de niveau II, Responsable QSE</h3>
       <p>2014-2016 / CESI Entreprise, Dijon</p>
       <h3>Master 2, Management des Risques Industriels et Environnementaux</h3>
@@ -107,10 +109,12 @@ export const ELEMENTS = [
     rightPosition: "50%",
     topPosition: "50%",
     pieceOfCV: `<h2>EXPERIENCES PROFESSIONNELLES</h2> 
+      <h3>Développeuse</h3>
+      <p><span>Octobre 2023 - En cours / IN-IT, Dijon</span></p>
+      <p>Résolution d'incident, Mise en place d'évolutions</p>
       <h3>Assistante admnistrative</h3>
-      <p><span>Octobre 2017 - En cours / Sanitel, Dijon</span></p>
+      <p><span>Octobre 2017 - Septembre 2023 / Sanitel, Dijon</span></p>
       <p>Accueil physique et téléphonique, Établissement de DC4 et contrat de sous-traitance, Vérification des factures...</p>
-      <h3>Assistante administrative</h3>
       <p><span>Février - Octobre 2017 / Loiseau Volets Roulants, Dijon</span></p>
       <p>Prise et suivie de commandes, Suivide de la trésorerie, Accueil physique et téléphonique.</p>
       <h3>Ingénieure QSE</h3>
@@ -141,11 +145,11 @@ export const ELEMENTS = [
     topPosition: "40%",
     pieceOfCV: `<h2>INTÉRÊTS ET LOISIRS</h2> 
       <h3>- Animation d'un blog Wordpress depuis 2013</h3>
-      <p>638 articles au 03/04/2023</p>
+      <p>638 articles au 04/02/2023</p>
       <h3>- Animation d'un compte Instagram depuis 2015</h3>
-      <p>723 publications au 03/04/2023</p> 
+      <p>740 publications au 04/02/2023</p> 
       <h3>- Création de vidéos Tiktok depuis 2020</h3>
-      <p>121 vidéos au 03/04/2023</p>
+      <p>147 vidéos au 04/02/2023</p>
       <h3>- Participation à l'Inktober depuis 2016</h3>
       <p>Publication de 31 dessins tout le long du mois d'octobre</p>`,
     cvRetrieve: false,
@@ -170,14 +174,29 @@ export const ELEMENTS = [
     translateTargetY: "-20%",
     rightPosition: "50%",
     topPosition: "20%",
-    pieceOfCV: `<h2>PROJETS PERSONNELS</h2> 
-    <h3>- Création de ce CV intéractif</h3>
+    pieceOfCV: `<h2>PROJETS</h2>
+      <h3>- Webzine de musique / Projet 4 au DIIAGE</h3>
+      <p>Réalisation d'un site internet recensant des milliers de musiques et permettant aux visiteurs de donner leur avis sur les titres.</p>
+      <p>Compétences : ASP.net Core, C#, Bootstrap</p> 
+      <h3>- Projet Assistant Cybersécurité / Projet 3 au DIIAGE</h3>
+      <p>Le projet consiste à créer un référentiel des solutions de cybersécurité existantes sur le marché.</p>
+      <p>Compétences : React, PostgreSQL, JavaScript, Express.js, Node.js, CSS, HTML5</p> 
+      <h3>- Création d'une plate-forme de gestion de noms de domaine / Projet 2 au DIIAGE</h3>
+      <p>Le but était de développer un site web permettant à des utilisateurs de gérer des noms de domaine.</p>
+      <p>Compétences : JavaScript, Express.js, Microsoft SQL Server, Node.js, CSS, HTML5</p>
+      <h3>- Création d'un jeu en réseau / Projet 1 au DIIAGE</h3>
+      <p>Jeux consistant à incarner une entreprise qui recrute des développeurs afin de s'étendre.</p>
+      <p>Compétences : C#, Test Driven Development</p>
+      <h3>- Création de ce CV intéractif / Projet personnel</h3>
       <p><a href="https://kororoapps.github.io/MissionCV/" target="_blank">https://kororoapps.github.io/MissionCV/</a></p>
-      <h3>- Création d'un jeu de tir pour m'exercer à Javascript</h3>
+      <p>Compétences : JavaScript, CSS, HTML</p>
+      <h3>- Création d'un jeu de tir pour m'exercer à Javascript / Projet personnel</h3>
       <p><a href="https://kororoapps.github.io/ShootTeemo/" target="_blank">https://kororoapps.github.io/ShootTeemo/</a></p>
-      <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony</h3>
-      <p>En cours</p>`,
-    cvRetrieve: false,
+      <p>Compétences : JavaScript, CSS, HTML</p>
+      <h3>- Création d'un site internet "Cookiniste" pour m'exercer à Symfony / Projet personnel</h3>
+      <p><a href="https://github.com/KororoApps/cookiniste" target="_blank">https://github.com/KororoApps/cookiniste</a></p>
+      <p>Compétences : PHP, Symfony, Twig</p>`,    
+      cvRetrieve: false,
     pieceOfParchment: "./Cv_Galaxy/piece_of_cv/cv-projetsPersonnels.png",
   },
   {
@@ -199,7 +218,7 @@ export const ELEMENTS = [
     translateTargetY: "-10%",
     rightPosition: "50%",
     topPosition: "20%",
-    pieceOfCV: `<h2>PROFIL PERSONNEL</h2> 
+    pieceOfCV: `<h2>SOFT SKILLS</h2> 
       <p>Autonome,</p>
       <p>Créative,</p>
       <p>Persévérante.</p>
